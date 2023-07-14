@@ -1,0 +1,78 @@
+<div class="container-fluid">
+
+
+      <div class="admin-reg-img-cont">
+
+      </div>
+
+    
+        <div class="admin-reg-form-cont">
+          <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+            <li [ngbNavItem]="1">
+              <button ngbNavLink  class="signup-btn">Signup</button>
+              <ng-template ngbNavContent >
+               <div class="signup-cont">
+                <h4 class="signup-text heading-txt" (click)="check()">Admin signup form</h4>
+                
+                <form  (submit)="createAdmin($event)" [formGroup]="adminData">
+                  <div class="form-group my-3">
+                    <input type="text"  formControlName="company_name" class="form-control" id="company" placeholder="Company name">
+                    <span *ngIf="company_name?.errors?.['required'] && (company_name?.touched || company_name?.dirty)">company name is required</span>
+                    <span *ngIf="company_name?.errors?.['minlength'] && (company_name?.touched || company_name?.dirty)">company name should be 5 character</span>
+                  </div>
+
+                  <div class="form-group my-3">
+                    <input type="email"  formControlName="admin_username" class="form-control" id="username" placeholder="Admin username">
+                    <span *ngIf="admin_username?.errors?.['required'] && (admin_username?.touched || admin_username?.dirty)">admin username is required</span>
+                    <span *ngIf="admin_username?.errors?.['email'] && (admin_username?.touched || admin_username?.dirty)">enter admin email</span>
+                  </div>
+                
+                  <div class="form-group my-3">
+                    <input type="password"  class="form-control" formControlName="password" id="password" placeholder="Password">
+                    <span *ngIf="password?.errors?.['required'] && (password?.touched || password?.dirty)">password is required</span>
+                    <span *ngIf="password?.errors?.['minlength'] && (password?.touched || password?.dirty)">password should be  6 character</span>
+                    <span *ngIf="password?.errors?.['maxlength'] && (password?.touched || password?.dirty)">password should be less than 12 character</span>
+                    <span *ngIf="password?.invalid && (con_password?.touched || con_password?.dirty)">password is required</span>
+                  </div>
+
+                  <div class="form-group my-3">
+                    <input type="password"  class="form-control" id="password" formControlName="con_password" placeholder="Confirm password">
+  
+                    <span *ngIf="con_password?.errors?.['required']  && password?.valid && (con_password?.touched || con_password?.dirty)">confirm password is required</span>
+                    <span *ngIf="con_password?.errors?.['minlength'] && password?.valid && (con_password?.touched || con_password?.dirty)">confirm password should be  6 character</span>
+                    <span *ngIf="con_password?.errors?.['maxlength'] && password?.valid && (con_password?.touched || con_password?.dirty)">confirm password should be less than 12 character</span>
+                  </div>
+                 
+                 
+                  <button type="submit" class="btn btn-custom ">Register</button>
+                </form>
+               </div>
+              </ng-template>
+            </li>
+            <li [ngbNavItem]="2">
+              <button ngbNavLink class="login-btn">Login</button>
+              <ng-template ngbNavContent>
+                <div class="login-cont">
+                  <h4 class="login-text heading-txt">Admin login form</h4>
+                  <form>
+                    <div class="form-group my-3">
+                      <input type="email" required class="form-control" id="username" placeholder="Enter your username">
+                    </div>
+                  
+                    <div class="form-group my-3">
+                      <input type="password" required class="form-control" id="password" placeholder="Enter your password">
+                    </div>
+                   
+                  
+                    <button type="submit" class="btn btn-primary">Login</button>
+                  </form>
+                 </div>
+              </ng-template>
+            </li>
+            
+          </ul>
+          
+          <div [ngbNavOutlet]="nav" class="mt-0"></div>
+        </div>
+
+</div>
