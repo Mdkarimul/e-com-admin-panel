@@ -7,7 +7,8 @@ import { HeroService } from '../services/hero.service';
 })
 export class ChildComponent {
 
-  @Input() hero! : HeroService;
-  @Input("master")  masterName = ''; 
+@Input() logedin! :boolean;
+
+
 
 }
