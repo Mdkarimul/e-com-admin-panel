@@ -2,6 +2,9 @@
     
 </router-outlet> -->
 <h1>parent component</h1>
-<app-child [logedin]="userlogedin"></app-child>
+<h2>Should mankind colonize the Universe?</h2>
+<h3>Agree: {{agreed}}, Disagree: {{disagree}}</h3>
+<app-child *ngFor="let voter of voters" [name]="voter" (voted)="onVoted($event)"></app-child>
+
 
 
