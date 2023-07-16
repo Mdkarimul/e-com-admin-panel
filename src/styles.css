@@ -1,16 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@400&display=swap');
 *{
     padding: 0px;
     margin:0px;
 }
+
+:root{
+    --color-bg:#ffff;
+    --color-bg-two:#dad2d2d9;
+    --color-h:#000000c8;
+    --color-p:#0000006c;
+    --color-p-two:#716e6e;
+    --btn-color:#f5ebe5d3;
+    --btn-bg:#360502;
+    --color-warn:#e21e10;
+}
+
 .heading-txt {
     font-family: 'Roboto', sans-serif;
-    color: #0000006c;
+    color:var(--color-h);
 }
 
 .paragraph-txt{
     font-family: 'Open Sans', sans-serif;
-    color: #0000006c;
+    color:var(--color-p);
 }

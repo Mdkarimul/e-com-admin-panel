@@ -5,35 +5,43 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   background-color:#ffff;
+   background-color:var(--color-bg);
 }
 .admin-reg-img-cont{
    width:50%;
    height:500px;
-   padding: 20px;
-   background-color: #f3f3f3;
+   padding:5vh;
+   background-color:var(--color-bg-two);
    border-top-left-radius: 5px;
    border-top-right-radius:0px;
    border-bottom-left-radius: 5px;
    border-bottom-right-radius:0px;
   background-image: url("../../assets/landing_image.gif");
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size:100% 100%;
+  object-fit: contain;
 }
 
 .admin-reg-form-cont{
    width:40%;
    height:500px;
-   padding:30px;
-   background-color: #f3f3f3;
-   border-top-left-radius: 5px;
-   border-top-right-radius:0px;
-   border-bottom-left-radius: 5px;
-   border-bottom-right-radius:0px;
+   padding:5vh;
+   background-color:var(--color-bg-two);
+   border-top-right-radius: 5px;
+   border-top-left-radius:0px;
+   border-bottom-right-radius: 5px;
+   border-bottom-left-radius:0px;
 }
 .signup-btn,.login-btn{
    background-color:initial;
+   font-family: 'Roboto', sans-serif;
+   color:var(--color-p-two);
+   border:none;
 }
+.signup-btn:focus,.login-btn:focus{
+   color: var(--color-p-two);
+}
+
 
 .signup-cont,.login-cont{
    padding: 15px;
@@ -44,31 +52,32 @@
    background-color:initial;
 }
 
+
 .login-text,.signup-text{
-   margin:30px 0px  0px 10px;
+   margin:10px 0px  0px 0px;
    letter-spacing:1px;
+   font-size:3vh;
 
 }
 
 input:focus{
    box-shadow: none;
-   background-color: #f3f3f3;
-   border:1px solid #979090;
+   background-color: initial;
+   border:1px solid #1c161623;
 }
 input{
    font-family: 'Open Sans', sans-serif;
-   background-color: #f3f3f3;
-   border:1px solid #979090;
+   background-color:var(--color-bg-two);
+   border:1px solid #1c161623;
    font-weight:lighter;
-   color:#716e6e;
+   color:var(--color-p-two);
    font-size: 16px;
-
 }
 
 .btn-custom{
    font-family: 'Roboto', sans-serif;
-    color: #000000c0;
-   border:1px solid #000000c2;
+    color:var(--btn-color);
+   background-color:var(--btn-bg);
 }
 
 .form-group{
@@ -79,8 +88,21 @@ input{
    position: absolute;
    font-family: 'Open Sans', sans-serif;
    font-weight: bold;
-   color:#e21e10;
+   color:var(--color-warn);
    z-index: 10;
    font-size: 12px;
+}
 
+/*responsive coding*/
+
+@media(max-width:680px){
+ 
+   .admin-reg-img-cont{
+    display: none;
+   }
+
+   .admin-reg-form-cont{
+    width: 90%;
+    padding: 1vh;
+   }
 }
