@@ -15,32 +15,32 @@
                 <h4 class="signup-text heading-txt" (click)="check()">Admin signup form</h4>
                 
                 <form  (submit)="createAdmin($event)" [formGroup]="adminData">
-                  <div class="form-group my-3">
-                    <input type="text"  formControlName="company_name" class="form-control" id="company" placeholder="Company name">
-                    <span *ngIf="company_name?.errors?.['required'] && (company_name?.touched || company_name?.dirty)">company name is required</span>
-                    <span *ngIf="company_name?.errors?.['minlength'] && (company_name?.touched || company_name?.dirty)">company name should be 5 character</span>
+                  <div class="form-group my-4">
+                    <input type="text" required="required"  formControlName="company_name" class="form-control" id="company" placeholder="Company name">
+                    <span *ngIf="company_name?.errors?.['required'] && (company_name?.touched || company_name?.dirty)">Company name is required</span>
+                    <span *ngIf="company_name?.errors?.['minlength'] && (company_name?.touched || company_name?.dirty)">Company name should be 5 characters</span>
                   </div>
 
-                  <div class="form-group my-3">
-                    <input type="email"  formControlName="admin_username" class="form-control" id="username" placeholder="Admin username">
-                    <span *ngIf="admin_username?.errors?.['required'] && (admin_username?.touched || admin_username?.dirty)">admin username is required</span>
-                    <span *ngIf="admin_username?.errors?.['email'] && (admin_username?.touched || admin_username?.dirty)">enter admin email</span>
+                  <div class="form-group my-4">
+                    <input type="email" required="required"  formControlName="admin_username" class="form-control" id="username" placeholder="Admin username">
+                    <span *ngIf="admin_username?.errors?.['required'] && (admin_username?.touched || admin_username?.dirty)">Admin username is required</span>
+                    <span *ngIf="admin_username?.errors?.['email'] && (admin_username?.touched || admin_username?.dirty)">Enter admin email</span>
                   </div>
                 
-                  <div class="form-group my-3">
-                    <input type="password"  class="form-control" formControlName="password" id="password" placeholder="Password">
-                    <span *ngIf="password?.errors?.['required'] && (password?.touched || password?.dirty)">password is required</span>
-                    <span *ngIf="password?.errors?.['minlength'] && (password?.touched || password?.dirty)">password should be  6 character</span>
-                    <span *ngIf="password?.errors?.['maxlength'] && (password?.touched || password?.dirty)">password should be less than 12 character</span>
-                    <span *ngIf="password?.invalid && (con_password?.touched || con_password?.dirty)">password is required</span>
+                  <div class="form-group my-4">
+                    <input type="password" required="required"  class="form-control" formControlName="password" id="password" placeholder="Password">
+                    <span *ngIf="password?.errors?.['required'] && (password?.touched || password?.dirty) && !(con_password?.touched || con_password?.dirty)">Password is required</span>
+                    <span *ngIf="password?.errors?.['minlength'] && (password?.touched || password?.dirty)">Password should be  6 characters</span>
+                    <span *ngIf="password?.errors?.['maxlength'] && (password?.touched || password?.dirty)">Password should be less than 12 character</span>
+                    <span *ngIf="password?.errors?.['required'] && (con_password?.touched || con_password?.dirty)">Password is required</span>
                   </div>
 
-                  <div class="form-group my-3">
-                    <input type="password"  class="form-control" id="password" formControlName="con_password" placeholder="Confirm password">
+                  <div class="form-group my-4">
+                    <input type="password" required="required" class="form-control" id="password" formControlName="con_password" placeholder="Confirm password">
   
-                    <span *ngIf="con_password?.errors?.['required']  && password?.valid && (con_password?.touched || con_password?.dirty)">confirm password is required</span>
-                    <span *ngIf="con_password?.errors?.['minlength'] && password?.valid && (con_password?.touched || con_password?.dirty)">confirm password should be  6 character</span>
-                    <span *ngIf="con_password?.errors?.['maxlength'] && password?.valid && (con_password?.touched || con_password?.dirty)">confirm password should be less than 12 character</span>
+                    <span *ngIf="con_password?.errors?.['required']  && password?.valid && (con_password?.touched || con_password?.dirty)">Confirm password is required</span>
+                    <span *ngIf="con_password?.errors?.['minlength'] && password?.valid && (con_password?.touched || con_password?.dirty)">Confirm password should be  6 characters</span>
+                    <span *ngIf="con_password?.errors?.['maxlength'] && password?.valid && (con_password?.touched || con_password?.dirty)">Confirm password should be less than 12 characters</span>
                   </div>
                  
                  
