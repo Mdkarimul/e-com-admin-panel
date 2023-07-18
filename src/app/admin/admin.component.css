@@ -20,6 +20,21 @@
   background-repeat: no-repeat;
   background-size:100% 100%;
   object-fit: contain;
+  position: relative;
+}
+
+
+
+.notification{
+   position: absolute;
+   width: 200px;
+   height:auto;
+   background-color:var(--color-bg-two);
+   bottom:20px;
+   right:0px;
+   transform: translate(-40%);
+   border-radius: 5px;
+   padding: 5px;
 }
 
 .admin-reg-form-cont{
