@@ -7,22 +7,23 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AjaxService {
-
+  public url:string = "http://localhost:8080/admin";
   constructor(private http:HttpClient,private router:Router) {
-    this.getAdmin();
+ 
    }
 
 getAdmin(): any{
-  this.router.events.subscribe((event)=>{
-    console.log(event);
-  });
+
   // const url = "http://localhost:8080/admin";
   // return  this.http.get<any>(url);
 }
 
 createAdmin(data:any):any{
-  const url = "http://localhost:8080/admin";
-  return this.http.post<any>(url,data);
+  return this.http.post<any>(`${this.url}/signup`,data);
+}
+
+loginAdmin(data:any):Observable<any>{
+ return this.http.post<any>(`${this.url}/login`,data);
 }
 
 
