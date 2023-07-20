@@ -9,6 +9,7 @@ export class OrderComponent {
 
 
   title = 'ng-chart';
+  ti = "karimul"
   chart: any = [];
  
   constructor() {}
