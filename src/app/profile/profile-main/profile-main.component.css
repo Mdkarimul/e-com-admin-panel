@@ -1,0 +1,33 @@
+.sidenav-max{
+    width:20%;
+    height: 100vh;
+    float: left;
+    background-color:var(--color-bg-two);
+    padding:0;
+    transition: 0.5s;
+}
+.sidenav-min{
+    width:5%;
+    height: 100vh;
+    float: left;
+    background-color:var(--color-bg-two);
+    padding:0;
+    transition: 0.5s;
+}
+.main-section-max{
+    width: 80%;
+    height: 100vh;
+    background-color: var(--color-bg);
+    border:1px solid red;
+    float: left;
+    transition: 0.5s;
+}
+
+.main-section-min{
+    width:95%;
+    height: 100vh;
+    background-color: var(--color-bg);
+    border:1px solid red;
+    float: left;
+    transition: 0.5s;
+}

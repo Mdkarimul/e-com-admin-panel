@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile-main.component.css']
 })
 export class ProfileMainComponent implements OnInit {
-
+public navControl:boolean = false;
   constructor(private authService:AuthServicesService,private router:Router){
      
   }
@@ -28,8 +28,16 @@ export class ProfileMainComponent implements OnInit {
            (error)=>{
           console.log(error);
            })
-
       }
+  }
+
+  sideMenu(value:boolean){
+    alert(value);
+     if(value){
+        this.navControl = true;
+     }else{
+      this.navControl = false;
+     }
   }
 
 }

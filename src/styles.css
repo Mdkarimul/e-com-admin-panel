@@ -14,7 +14,11 @@
     --btn-color:#f5ebe5d3;
     --btn-bg:#360502;
     --color-warn:#e21e10;
+    --heading-font:'Roboto', sans-serif;
 }
+
+
+
 
 .heading-txt {
     font-family: 'Roboto', sans-serif;
@@ -24,4 +28,14 @@
 .paragraph-txt{
     font-family: 'Open Sans', sans-serif;
     color:var(--color-p);
+}
+
+.custom-btn{
+    padding:10px 14px;
+    background-color:var(--color-bg-two);
+    border: none;
+    color:var(--color-p);
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 1px 1px 1px var(--color-p-two);
 }

@@ -1,0 +1,19 @@
+<div class="sidenav-main">
+    <div class="logo-cont">
+        <div>
+            <span class="e">E </span><span class="logo" *ngIf="!sideNav">-comm admin</span>
+        </div>
+      
+    </div>
+    <div class="nav-cont">
+        <ul>
+        
+            <li  [class]=" !sideNav ? 'sidenav-li-max': 'sidenav-li-min'" [class.active]="showMenu===item.title" *ngFor="let item of  sidebarnavItems">
+                <i [class]="item.icon"></i>
+                <a *ngIf="!sideNav" routerLink="overview" (click)="addExpandClass(item.title)">{{item.title}}</a>
+            </li>
+            
+        </ul>
+    </div>
+ 
+</div>

@@ -1,1 +1,16 @@
-<p>profile-main works!</p>
+<div>
+    <div class="" [ngClass]=" navControl ? 'sidenav-min' : 'sidenav-max'">
+        <app-sidenav [sideNav]="navControl"></app-sidenav>
+    </div>
+    <div class="main-section" [ngClass]="navControl ? 'main-section-min' : 'main-section-max'">
+         <app-header (sidenavMinMax)="sideMenu($event)"></app-header> 
+        <router-outlet></router-outlet>
+    </div>
+    
+</div>
+
+
+
+
+
+
