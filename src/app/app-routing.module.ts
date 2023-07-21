@@ -15,7 +15,9 @@ const routes: Routes = [
    canActivate:[authGuardGuard],
 
 },
-
+{
+  
+}
 
   
   

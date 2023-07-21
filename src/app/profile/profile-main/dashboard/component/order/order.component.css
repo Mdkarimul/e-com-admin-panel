@@ -1,12 +1,13 @@
 .new-order,.on-hold,.out-of-stock{
     width: 100%;
     height: 120px;
-    background-color: var(--color-bg-two);
+     background-color: var(--color-bg-two); 
     border-radius: 5px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 2rem;
+    box-shadow: 2px 2px 2px 2px var(--color-bg-two);
 }
 .new-order .image,.on-hold .image,.out-of-stock .image{
     width: 40%;
@@ -14,25 +15,21 @@
 }
 .new-order .content,.on-hold .content,.out-of-stock .content{
     width: 60%;
-    height: 100%;
+    height:auto;
 }
 .new-order .content h4,.on-hold .content h4,.out-of-stock .content h4{
-    margin:0px;
-    padding: 0px;
-
+    font-weight:normal;
 }
 
 .new-order .content span, .on-hold .content span, .out-of-stock .content span{
-    margin:0px;
-    padding: 0px;
     font-family: 'Open Sans', sans-serif;
     text-transform: capitalize;
+    font-size:0.9rem;
 }
 
 .sales-report{
     width: 100%;
     height:300px;
-    border:1px solid green;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -40,7 +37,7 @@
 }
 
 .sales-chart{
-    width: 100%;
+    width:100%;
     height:300px;
     border: 1px ;
     position: relative;

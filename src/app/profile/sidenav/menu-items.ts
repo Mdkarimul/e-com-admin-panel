@@ -74,6 +74,74 @@ export const ROUTES: RouteInfo[] = [
     extralink: false,
     submenu: []
   },
+  {
+    path: '/dashboard',
+    title: 'Compaign',
+    icon: 'fa-solid fa-person-pregnant',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+
+  {
+    path: '/dashboard',
+    title: 'Modern',
+    icon: 'fa-solid fa-people-group',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/dashboard',
+    title: 'Compaign',
+    icon: 'fa-solid fa-person-pregnant',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+
+  {
+    path: '/dashboard',
+    title: 'Modern',
+    icon: 'fa-solid fa-people-group',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/dashboard',
+    title: 'Compaign',
+    icon: 'fa-solid fa-person-pregnant',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+
+  {
+    path: '/dashboard',
+    title: 'Modern',
+    icon: 'fa-solid fa-people-group',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+  {
+    path: '/dashboard',
+    title: 'Compaign',
+    icon: 'fa-solid fa-person-pregnant',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
+
+  {
+    path: '/dashboard',
+    title: 'Modern',
+    icon: 'fa-solid fa-people-group',
+    class: '',
+    extralink: false,
+    submenu: []
+  },
 
 
 

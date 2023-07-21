@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import Chart from 'chart.js/auto';
+import { Chart,Colors } from 'chart.js/auto';
+
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',
@@ -15,24 +16,38 @@ export class OrderComponent {
   constructor() {}
 
   ngOnInit() {
+    Chart.register(Colors);
     this.chart = new Chart('canvas', {
       type: 'bar',
       data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange',],
         datasets: [
           {
-            label: '# of Votes',
+            label: 'Top selling product in Month',
             data: [12, 19, 3, 5, 2, 3],
             borderWidth: 1,
           },
         ],
+      
       },
       options: {
         scales: {
           y: {
             beginAtZero: true,
+            max:30
           },
+          x:{
+            max:6
+          }
         },
+        plugins:{
+          legend:{
+            display:true
+          },
+          tooltip:{
+            enabled:true
+          }
+        }
       },
     });
   }
