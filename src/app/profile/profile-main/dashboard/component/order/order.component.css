@@ -14,19 +14,16 @@
 }
 .new-order .content,.on-hold .content,.out-of-stock .content{
     width: 60%;
-    height: 100%;
+    height:auto;
 }
 .new-order .content h4,.on-hold .content h4,.out-of-stock .content h4{
-    margin:0px;
-    padding: 0px;
-
+    font-weight:normal;
 }
 
 .new-order .content span, .on-hold .content span, .out-of-stock .content span{
-    margin:0px;
-    padding: 0px;
     font-family: 'Open Sans', sans-serif;
     text-transform: capitalize;
+    font-size:0.9rem;
 }
 
 .sales-report{
@@ -40,7 +37,7 @@
 }
 
 .sales-chart{
-    width: 100%;
+    width:80%;
     height:300px;
     border: 1px ;
     position: relative;
