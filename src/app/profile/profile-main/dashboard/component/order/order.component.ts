@@ -23,7 +23,7 @@ export class OrderComponent {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange',],
         datasets: [
           {
-            label: '# of Votes',
+            label: 'Top selling product in Month',
             data: [12, 19, 3, 5, 2, 3],
             borderWidth: 1,
           },
