@@ -1,0 +1,135 @@
+
+<section class="content">
+    <div class="search-cont">
+        <div class="search-input">
+            <button>Search</button>
+            <input type="search" name="" id="">
+        </div>
+    </div>
+    <div class="page-header">
+            <h4>All categories</h4>
+      <button class="add-category-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Add Category</button>
+    </div>
+
+    <div class="category-list">
+      <!-- Category items will be dynamically generated here -->
+      <div class="category-item">
+        <div class="category-cont">
+      <span class="category-name">Electronics</span>
+      <div class="category-actions">
+        <button class="edit-button">Edit</button>
+        <button class="delete-button">Delete</button>
+      </div>
+        </div>
+     
+        <div class="sub-category">
+            <div class="sub-category-expander"><span>Sub category</span><i (click)="collapseSubcategory()" class="fa fa-plus-square" aria-hidden="true"></i></div>
+
+            <ul *ngIf="subCategoryToggler">
+                <li> tv </li>
+                <li> computer </li>
+                <li> laptop </li>
+            </ul>
+            
+        </div>
+      </div>
+
+
+      <div class="category-item">
+        <div class="category-cont">
+      <span class="category-name">Electronics</span>
+      <div class="category-actions">
+        <button class="edit-button">Edit</button>
+        <button class="delete-button">Delete</button>
+      </div>
+        </div>
+     
+        <div class="sub-category">
+            <div class="sub-category-expander"><span>Sub category</span><i (click)="collapseSubcategory()" class="fa fa-plus-square" aria-hidden="true"></i></div>
+
+            <ul *ngIf="subCategoryToggler">
+                <li> tv </li>
+                <li> computer </li>
+                <li> laptop </li>
+            </ul>
+            
+        </div>
+      </div>
+
+
+      <div class="category-item">
+        <div class="category-cont">
+      <span class="category-name">Electronics</span>
+      <div class="category-actions">
+        <button class="edit-button">Edit</button>
+        <button class="delete-button">Delete</button>
+      </div>
+        </div>
+     
+        <div class="sub-category">
+            <div class="sub-category-expander"><span>Sub category</span><i (click)="collapseSubcategory()" class="fa fa-plus-square" aria-hidden="true"></i></div>
+
+            <ul *ngIf="subCategoryToggler">
+                <li> tv </li>
+                <li> computer </li>
+                <li> laptop </li>
+            </ul>
+            
+        </div>
+      </div>
+
+
+      <div class="category-item">
+        <div class="category-cont">
+      <span class="category-name">Electronics</span>
+      <div class="category-actions">
+        <button class="edit-button">Edit</button>
+        <button class="delete-button">Delete</button>
+      </div>
+        </div>
+     
+        <div class="sub-category">
+            <div class="sub-category-expander"><span>Sub category</span><i (click)="collapseSubcategory()" class="fa fa-plus-square" aria-hidden="true"></i></div>
+
+            <ul *ngIf="subCategoryToggler">
+                <li> tv </li>
+                <li> computer </li>
+                <li> laptop </li>
+            </ul>
+            
+        </div>
+      </div>
+      <!-- More category items can be added here -->
+    </div>
+  </section>
+
+
+
+  <!--bootstrap modal coding-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form (submit)="createCategory($event)" [formGroup]="createCategoryForm">
+            <h5 class="modal-title" id="exampleModalLabel">Add category</h5>
+            <div class="mb-3">
+              <input type="text" class="form-control category-name" formControlName="category_name" placeholder="Enter category name" id="recipient-name">
+            </div>
+            <div class="mb-3">
+
+              <textarea class="form-control tags" rows="7" formControlName="tags" placeholder="Enter tags name and with seperated by comma" id="message-text"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <input type="submit" class="custom-btn" >
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end bootstrap modal coding-->
+

@@ -3,17 +3,17 @@ import { RouteInfo } from './sidebar.metadata';
 export const ROUTES: RouteInfo[] = [
  
   {
-    path: '/dashboard',
+    path: 'overview',
     title: 'Dashboard',
-    icon: 'fa-solid fa-plug-circle-bolt',
+    icon: 'fa fa-tachometer',
     class: '',
     extralink: false,
     submenu: []
   },
 
   {
-    path: '/dashboard',
-    title: 'Products',
+    path: 'category',
+    title: 'Category',
     icon: 'fa-solid fa-person-shelter',
     class: '',
     extralink: false,
