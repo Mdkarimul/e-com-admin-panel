@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
 })
 export class AuthServicesService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) { 
+  }
 public browser_token?:any;
   isLogged(){
    return !!localStorage.getItem("__admin");
@@ -14,7 +15,6 @@ public browser_token?:any;
 
   getToken(){
     this.browser_token =  localStorage.getItem("__admin");
-    console.log(this.browser_token);
     return this.browser_token;
 
   }

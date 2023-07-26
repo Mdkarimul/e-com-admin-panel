@@ -127,7 +127,6 @@ adminLogin(event:Event){
         "password_login" : this.admin_login_data.value.password_login
       };
       this.ajax.loginAdmin(data).subscribe((res:any)=>{
-        console.log(res.token);
         this.message = res.notice;
         this.type = res.res_type;
         setTimeout(()=>{

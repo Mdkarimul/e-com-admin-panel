@@ -14,16 +14,15 @@ public navControl:boolean = false;
   }
 
   ngOnInit(): void {
-    alert("from ngoninit");
       if(this.authService.getToken()){
         this.authService.verify_token().subscribe((data:any)=>{
           if(data.message=="User not authenticated !"){
            localStorage.removeItem("__admin");
             this.router.navigate(['/admin']);
           }else if(data.message=="User authenticated !"){
+            localStorage.removeItem("__admin");
           localStorage.setItem("__admin",data.token);
           }
-          console.log(data);
            },
            (error)=>{
           console.log(error);

@@ -9,7 +9,7 @@ private url:string = "http://localhost:8080/api/admin/category";
 
 
 createCategory(data:any){
-this.http.get<any>(this.url).subscribe((res:any)=>{
+this.http.post<any>(this.url,data).subscribe((res:any)=>{
   console.log(res);
 },
 (error)=>{
