@@ -14,9 +14,8 @@ public navControl:boolean = false;
   }
 
   ngOnInit(): void {
-    console.log(this.authService.getToken());
+    alert("from ngoninit");
       if(this.authService.getToken()){
-
         this.authService.verify_token().subscribe((data:any)=>{
           if(data.message=="User not authenticated !"){
            localStorage.removeItem("__admin");
@@ -24,6 +23,7 @@ public navControl:boolean = false;
           }else if(data.message=="User authenticated !"){
           localStorage.setItem("__admin",data.token);
           }
+          console.log(data);
            },
            (error)=>{
           console.log(error);
@@ -32,7 +32,6 @@ public navControl:boolean = false;
   }
 
   sideMenu(value:boolean){
-    alert(value);
      if(value){
         this.navControl = true;
      }else{

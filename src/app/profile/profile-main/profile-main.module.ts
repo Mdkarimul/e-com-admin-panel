@@ -17,6 +17,9 @@ import { HeaderComponent } from '../header/header.component';
     ProfileMainRoutingModule,
  
     
+  ],
+  providers:[
+   
   ]
 })
 export class ProfileMainModule { }

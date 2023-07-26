@@ -15,6 +15,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     CategoryRoutingModule,
     ReactiveFormsModule
+  ],
+  providers :[
+    
   ]
 })
 export class CategoryModule { }
