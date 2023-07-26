@@ -100,8 +100,8 @@ createAdmin(event:Event){
         this.type = res.res_type;
         setTimeout(()=>{
           this.message = "";
-          localStorage.setItem("__admin",res.token);
-          this.router.navigate(['/profile']);
+           localStorage.setItem("__admin",res.token);
+           this.router.navigate(['/profile']);
         },4000);
       });
     }
@@ -127,7 +127,7 @@ adminLogin(event:Event){
         "password_login" : this.admin_login_data.value.password_login
       };
       this.ajax.loginAdmin(data).subscribe((res:any)=>{
-        console.log(res);
+        console.log(res.token);
         this.message = res.notice;
         this.type = res.res_type;
         setTimeout(()=>{
@@ -136,13 +136,12 @@ adminLogin(event:Event){
            this.router.navigate(['/profile']);
         },4000);
       },(error)=>{
-      
         this.message = error.error.notice;
         this.type = error.error.res_type;
         setTimeout(()=>{
           this.message = "";
-          // localStorage.setItem("__admin",res.token);
-          // this.router.navigate(['/profile']);
+          //  localStorage.setItem("__admin",res.token);
+          //  this.router.navigate(['/profile']);
         },4000);
       });
     }
