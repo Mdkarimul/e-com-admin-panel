@@ -3,7 +3,8 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpErrorResponse
 } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
 import { AuthServicesService } from '../services/auth-services.service';
@@ -25,11 +26,7 @@ export class AuthInterceptor implements HttpInterceptor {
       const authReq = req.clone({
         headers: req.headers.set('Authorization',` Bearer ${this.token}`)
       });
-      return next.handle(authReq).pipe(
-        catchError((error)=>{
-          return throwError(()=> new Error(error));
-        })
-      );
+       return  next.handle(authReq);
     }
        return next.handle(req);
     
