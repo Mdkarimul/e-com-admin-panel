@@ -53,6 +53,6 @@ export class CreateCategoryComponent {
         console.log(error.error)
       });
     }
-
+console.log("kkk");
   }
 }
