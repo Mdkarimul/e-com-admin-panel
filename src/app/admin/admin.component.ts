@@ -3,6 +3,7 @@ import { AjaxService } from '../services/ajax.service';
 import { ActivationStart } from '@angular/router';
 import { Router, ActivationEnd } from '@angular/router';
 import { FormBuilder ,FormGroup, FormControl, Validators  } from '@angular/forms';
+import { ValidatorsService } from '../services/validators.service';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -16,7 +17,12 @@ public formData:any;
 public validate_array:string[] = [];
 public message?:string;
 public type?:string;
-constructor(private router:Router,private ajax:AjaxService,private fb:FormBuilder){
+constructor(
+  private router:Router,
+  private ajax:AjaxService,
+  private fb:FormBuilder,
+  public checkError : ValidatorsService
+  ){
 
  
 }
@@ -39,11 +45,7 @@ admin_login_data = this.fb.group({
  password_login: ['',[Validators.required,Validators.maxLength(12),Validators.minLength(6)]],
 });
 
-//check error validation
-checkError(value: any): boolean {
-  // Perform the necessary logic to check if the value exists in the array
-  return this.validate_array.includes(value);
-}
+
 //inpur form validation
 get company_name (){
   return this.adminSignup.get("company_name");

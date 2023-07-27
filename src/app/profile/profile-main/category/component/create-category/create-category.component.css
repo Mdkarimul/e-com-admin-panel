@@ -154,6 +154,13 @@
   .tags {
     resize: none;
   }
+
+  .warn_input{
+    color: var(--color-warn);
+  }
+  input:focus,textarea:focus{
+    box-shadow: none;
+  }
   
   
 

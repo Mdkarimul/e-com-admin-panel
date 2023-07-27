@@ -20,7 +20,7 @@
                 <form  (submit)="createAdmin($event)" [formGroup]="adminSignup">
                   <div class="form-group my-4">
                     <input type="text" required="required"  formControlName="company_name" class="form-control" id="company" placeholder="Company name">
-                    <ng-template [ngIf]="checkError('company_name')">
+                    <ng-template [ngIf]="checkError.checkError('company_name')">
                       <span *ngIf="company_name?.errors?.['required'] && !(company_name?.touched || company_name?.dirty)">Company name is required</span>
                     </ng-template>
                     <span *ngIf="company_name?.errors?.['required'] && (company_name?.touched || company_name?.dirty)">Company name is required</span>
@@ -29,7 +29,7 @@
 
                   <div class="form-group my-4">
                     <input type="email" required="required"  formControlName="admin_username" class="form-control" id="username" placeholder="Admin username">
-                    <ng-template [ngIf]="checkError('admin_username')">
+                    <ng-template [ngIf]="checkError.checkError('admin_username')">
                       <span *ngIf="admin_username?.errors?.['required'] && !(admin_username?.touched || admin_username?.dirty)">Admin username is required</span>
                     </ng-template>
                     <span *ngIf="admin_username?.errors?.['required'] && (admin_username?.touched || admin_username?.dirty)">Admin username is required</span>
@@ -38,7 +38,7 @@
                 
                   <div class="form-group my-4">
                     <input type="password" required="required"  class="form-control" formControlName="password" id="password" placeholder="Password">
-                    <ng-template [ngIf]="checkError('password')">
+                    <ng-template [ngIf]="checkError.checkError('password')">
                       <span *ngIf="password?.errors?.['required']  && !(password?.touched || password?.dirty) && !(con_password?.touched || con_password?.dirty)">Password is required</span>
                     </ng-template>
                     <span *ngIf="password?.errors?.['required'] && (password?.touched || password?.dirty) && !(con_password?.touched || con_password?.dirty)">Password is required</span>
@@ -49,7 +49,7 @@
 
                   <div class="form-group my-4">
                     <input type="password" required="required" class="form-control" id="password" formControlName="con_password" placeholder="Confirm password">
-                    <ng-template [ngIf]="checkError('con_password')">
+                    <ng-template [ngIf]="checkError.checkError('con_password')">
                       <span *ngIf="con_password?.errors?.['required'] && !(con_password?.touched || con_password?.dirty)">Confirm password is required</span>
                     </ng-template>
                     <span *ngIf="con_password?.errors?.['required']  && password?.valid && (con_password?.touched || con_password?.dirty)">Confirm password is required</span>
@@ -76,7 +76,7 @@
                    
                     <div class="form-group my-4">
                       <input type="email" required="required"  formControlName="admin_username_login" class="form-control" id="username" placeholder="Admin username">
-                      <ng-template [ngIf]="checkError('admin_username_login')">
+                      <ng-template [ngIf]="checkError.checkError('admin_username_login')">
                         <span *ngIf="admin_username_login?.errors?.['required'] && !(admin_username_login?.touched || admin_username_login?.dirty)">Admin username is required</span>
                       </ng-template>
                       <span *ngIf="admin_username_login?.errors?.['required'] && (admin_username_login?.touched || admin_username_login?.dirty)">Admin username is required</span>
@@ -85,7 +85,7 @@
                   
                     <div class="form-group my-4">
                       <input type="password" required="required"  class="form-control" formControlName="password_login" id="password" placeholder="Password">
-                      <ng-template [ngIf]="checkError('password_login')">
+                      <ng-template [ngIf]="checkError.checkError('password_login')">
                         <span *ngIf="password_login?.errors?.['required']  && !(password_login?.touched || password_login?.dirty)">Password is required</span>
                       </ng-template>
                       <span *ngIf="password_login?.errors?.['minlength'] && (password_login?.touched || password_login?.dirty)">Password should be  6 characters</span>

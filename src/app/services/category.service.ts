@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -7,16 +8,15 @@ export class CategoryService {
 private url:string = "http://localhost:8080/api/admin/category";
   constructor(private http:HttpClient) { }
 
+ 
 
-createCategory(data:any){
-this.http.post<any>(this.url,data).subscribe((res:any)=>{
-  console.log(res);
-},
-(error)=>{
-  console.log(error);
+createCategory(data:any):Observable<any>{
+
+return this.http.post<any>(this.url,data);
+
 }
-);
-}
+
+
 
 
 
