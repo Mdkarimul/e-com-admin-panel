@@ -44,3 +44,15 @@
 body {
     background-image: var(--bs-gradient);
 }
+
+.notification{
+    position: absolute;
+    width:fit-content;
+    height:auto;
+    background-color:var(--color-bg-two);
+    bottom:20px;
+    right:0px;
+    transform: translate(-40%);
+    border-radius: 5px;
+    padding: 5px;
+ }
