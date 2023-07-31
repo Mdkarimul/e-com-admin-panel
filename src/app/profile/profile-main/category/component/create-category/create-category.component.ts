@@ -3,7 +3,7 @@ import { FormBuilder ,FormGroup, FormControl, Validators  } from '@angular/forms
 import { CategoryService } from '../../../../../services/category.service';
 import { ValidatorsService } from 'src/app/services/validators.service';
 import { NotificationService } from 'src/app/services/notification.service';
-import { map } from 'rxjs';
+
 
 @Component({
   selector: 'app-create-category',
@@ -17,16 +17,19 @@ export class CreateCategoryComponent implements AfterViewInit {
     private categoryService:CategoryService,
     public checkError : ValidatorsService,
     public showMessage : NotificationService
-    ){
-    }
+    ){}
+    
   public subCategoryToggler:boolean = true;
   public createCategoryData?:any;
   public all_category:any;
   public Cindex?:number;
+
+//collapse sub category
   collapseSubcategory(index:number){
       this.Cindex = index;
   }
 
+  //ng afterviewinit hook
   ngAfterViewInit(): void {
     this.categoryService.getCategory().subscribe({
       next : (response)=>{
@@ -37,6 +40,12 @@ export class CreateCategoryComponent implements AfterViewInit {
         this.showMessage.showMessage(error);
       }
     })
+  }
+
+  //edit category here
+  editCategory(index:number){
+    const currentData = this.all_category[index];
+    console.log(currentData);
   }
 
   createCategoryForm = this.fb.group({

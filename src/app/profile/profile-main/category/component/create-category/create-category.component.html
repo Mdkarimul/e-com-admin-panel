@@ -17,7 +17,7 @@
         <div class="category-cont">
       <span class="category-name">{{item.category_name}}</span>
       <div class="category-actions">
-        <button class="edit-button">Edit</button>
+        <button class="edit-button" (click)="editCategory(i)">Edit</button>
         <button class="delete-button">Delete</button>
       </div>
         </div>
@@ -27,7 +27,6 @@
 
             <ul *ngIf="subCategoryToggler && Cindex==i">
                 <li *ngFor="let subCategory of item.category_tags">{{subCategory}}</li>
-               
             </ul>
             
         </div>
