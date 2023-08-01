@@ -2,7 +2,6 @@
     width:20%;
     height: 100vh;
     float: left;
-    background-color:var(--color-bg-two);
     padding:0;
     transition: 0.5s;
     box-shadow: 1px 1px 1px 1px #fff;
@@ -11,7 +10,6 @@
     width:5%;
     height: 100vh;
     float: left;
-    background-color:var(--color-bg-two);
     padding:0;
     transition: 0.5s;
 }

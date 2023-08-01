@@ -4,35 +4,23 @@
     height: 10vh;
     float: left;
     display: flex;
-    justify-content:center;
+    justify-content:flex-start;
     align-items: center;
     box-shadow: 2px 2px 2px var(--color-bg-two);
+    background-color:var(--color-bg);
 }
-.logo-cont div{
-    width: fit-content;
-    height:fit-content;
-    cursor: pointer;
-    float: left;
 
-}
 .logo{
     width:auto;
     text-align: left;
     font-family: var(--heading-font); 
     margin:10px auto;
     font-size:1rem;
-    font-weight:normal;
+    font-weight: bold;
     padding:0px;
     color: var(--color-h);
 }
-.logo-cont .e{
-    background-color: var(--btn-bg);
-    padding: 5px 10px;
-    border-radius:5px;
-    color: white;
-    font-weight:normal;
-    font-size: 1rem;
-}
+
 .nav-cont{
     width: 100%;
     height:90vh;
@@ -40,20 +28,19 @@
     padding-top: 10px;
     overflow-x:hidden;
     overflow-y:scroll;
+    border-top-right-radius: 10px;
 }
 
 .nav-cont::-webkit-scrollbar{
-    width:5px;
-
+    width:10px;
 }
 .nav-cont::-webkit-scrollbar-track{
-    background-color:var(--color-h);
-    border-radius: 5px;
-
+    background-color:var(--color-bg-two);
+    border-top-right-radius: 10px;
 }
 .nav-cont::-webkit-scrollbar-thumb{
-    background-color:var(--btn-bg);
-    border-radius: 5px;
+    background-color:#ccc;
+    border-top-right-radius: 10px;
 }
 
 
@@ -86,11 +73,10 @@
     align-items: center;
     justify-content: center;
     transition: 0.5s;
-
 }
 
 .sidenav-main ul li i {
-     color:var(--color-p-two);
+     color:var(--color-h);
      width:30%;
      font-size: 0.8rem;
 
@@ -99,7 +85,7 @@
     text-decoration: none;
     text-transform: capitalize;
     color: var(--color-p-two);
-    font-weight:normal;
+    font-weight:500;
     width: 70%;
     text-align: left;
     font-family: 'Open Sans', sans-serif;

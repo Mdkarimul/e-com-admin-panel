@@ -1,13 +1,19 @@
+.main{
+border:none;
+}
+
+
 .new-order,.on-hold,.out-of-stock{
     width: 100%;
-    height: 120px;
+    height: 100px;
      background-color: var(--color-bg-two); 
     border-radius: 5px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 2rem;
-    box-shadow: 2px 2px 2px 2px var(--color-bg-two);
+     box-shadow: 1px 1px 1px 1px var(--color-bg); 
+    
 }
 .new-order .image,.on-hold .image,.out-of-stock .image{
     width: 40%;
