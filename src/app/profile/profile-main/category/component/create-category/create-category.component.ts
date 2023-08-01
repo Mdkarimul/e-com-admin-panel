@@ -101,7 +101,6 @@ export class CreateCategoryComponent implements AfterViewInit {
 
 
   createCategory(event:Event){
-    console.log("karimul islam");
     event.preventDefault();
     if(this.createCategoryForm.invalid){
       for (let [key, value] of Object.entries(this.createCategoryForm.controls)) {
