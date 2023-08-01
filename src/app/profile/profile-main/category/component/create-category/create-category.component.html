@@ -17,8 +17,8 @@
         <div class="category-cont">
       <span class="category-name">{{item.category_name}}</span>
       <div class="category-actions">
-        <button class="edit-button" (click)="editCategory(i)">Edit</button>
-        <button class="delete-button">Delete</button>
+        <button class="edit-button" (click)="editCategory(i)"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Edit</button>
+        <button class="delete-button" (click)="deleteCategory(i)" >Delete</button>
       </div>
         </div>
      
@@ -47,7 +47,7 @@
 
 
   <!--bootstrap modal coding-->
-  <div data-bs-backdrop="false" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div data-bs-backdrop="false" #modal class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog  modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -74,7 +74,7 @@
             </div>
 
             <div class="mb-3">
-                <input type="submit" class="custom-btn" >
+                <input type="submit" [value]="modal_btn_Control" class="custom-btn" >
               </div>
           </form>
           <div class="notification" *ngIf="showMessage.message">
