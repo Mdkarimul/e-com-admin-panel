@@ -7,8 +7,8 @@
         </div>
     </div>
     <div class="page-header">
-            <h4>All categories</h4>
-      <button class="add-category-button" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Add Category</button>
+            <p class="all_category">All categories</p>
+      <button class="custom-btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Add Category</button>
     </div>
 
     <div class="category-list">
@@ -17,8 +17,8 @@
         <div class="category-cont">
       <span class="category-name">{{item.category_name}}</span>
       <div class="category-actions">
-        <button class="edit-button" (click)="editCategory(i)"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Edit</button>
-        <button class="delete-button" (click)="deleteCategory(i)" >Delete</button>
+        <button class="edit-button custom-btn" (click)="editCategory(i)"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Edit</button>
+        <button class="delete-button custom-btn" (click)="deleteCategory(i)" >Delete</button>
       </div>
         </div>
      

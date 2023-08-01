@@ -73,7 +73,7 @@ export class CreateCategoryComponent implements AfterViewInit {
      const iterator = array1.values();
      let tags = '';
     for (const value of iterator) {
-      tags+= value;
+      tags+= value+"<br>";
     }
     this.createCategoryForm.patchValue({
        category_name : currentData.category_name,

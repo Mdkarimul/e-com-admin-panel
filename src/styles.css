@@ -7,7 +7,7 @@
 
 :root{
     --color-bg:#ffff;
-    --color-bg-two:#dfdfdfe3;
+    --color-bg-two:#ebebebe3;
     --color-h:#000000c8;
     --color-p:#00000088;
     --color-p-two:#4d4c4c;
@@ -38,7 +38,7 @@
     color:var(--color-bg);
     border-radius: 5px;
     font-family: 'Roboto', sans-serif;
-    
+    letter-spacing: 1px;
 }
 
 body {
