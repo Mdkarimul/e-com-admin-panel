@@ -5,11 +5,12 @@ import { MainHomeRoutingModule } from './main-home-routing.module';
 import { MainHomeComponent } from './main-home.component';
 import { HeaderComponent } from '../header/header.component';
 import { FormsModule } from '@angular/forms';
-
+import { HeroSliderComponent } from '../hero-slider/hero-slider.component';
 @NgModule({
   declarations: [
     MainHomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    HeroSliderComponent
   ],
   imports: [
     CommonModule,

@@ -41,6 +41,9 @@ export class CreateCategoryComponent implements AfterViewInit {
     this.categoryService.getCategory().subscribe({
       next : (response)=>{
         this.all_category = response.notice;
+       for(let i=0;i<this.all_category.length;i++){
+       this.all_category[i].category_tags =  this.all_category[i].category_tags[0].split("\n");
+       }
         console.log(this.all_category);
       },
       error : (error)=>{
@@ -69,15 +72,15 @@ export class CreateCategoryComponent implements AfterViewInit {
     this.modal_btn_Control = "Update";
     const currentData = this.all_category[index];
     this.Cid =  currentData._id;
-     const array1 =currentData.category_tags;
-     const iterator = array1.values();
-     let tags = '';
-    for (const value of iterator) {
-      tags+= value+"<br>";
-    }
+     const tags =currentData.category_tags;
+     let all_tags ="";
+     for(let i=0;i<tags.length;i++){
+    all_tags +=   tags[i]+"\n";
+     }
+     console.log(all_tags);
     this.createCategoryForm.patchValue({
        category_name : currentData.category_name,
-       category_tags : tags
+       category_tags :all_tags
     })
   }
 
@@ -111,6 +114,7 @@ export class CreateCategoryComponent implements AfterViewInit {
     }else{
       this.createCategoryData = this.createCategoryForm.value;
       if(this.modal_btn_Control==="Submit"){
+        console.log(this.createCategoryData);
        this.httpResponse =  this.categoryService.createCategory(this.createCategoryData);
       }else if(this.modal_btn_Control==="Update"){
         this.createCategoryData.category_id=this.Cid;

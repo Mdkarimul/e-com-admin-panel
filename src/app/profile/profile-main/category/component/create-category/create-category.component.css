@@ -69,7 +69,6 @@
     display: flex;
     justify-content: space-between;
     margin-bottom:7px;
-    border:1px solid green;
     font-family: var(--para-font);
   }
   .category-item .category-cont .category-name{
@@ -81,14 +80,13 @@
   }
  
   .category-item .category-cont .category-actions .delete-button{
-    background-color: #b02218;
     margin-left: 6px;
+    background-color: var(--color-warn);
   }
   .category-item .sub-category{
     width: 100%;
     height:auto;
     padding: 10px 0px;
-    border:1px solid yellow;
   }
   .category-item .sub-category .sub-category-expander{
     display: flex;
@@ -118,7 +116,6 @@
   .category-item .sub-category ul li{
     font-family: var(--para-font);
     text-transform: capitalize;
-    border:1px solid red;
   }
   .modal-header{
     background-color: var(--btn-bg)!important;

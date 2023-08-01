@@ -26,7 +26,7 @@
             <div class="sub-category-expander"><span>Sub category</span><i (click)="collapseSubcategory(i);" class="fa fa-plus-square" aria-hidden="true"></i></div>
 
             <ul *ngIf="subCategoryToggler && Cindex==i">
-                <li *ngFor="let subCategory of item.category_tags">{{subCategory}}</li>
+                <li class="badge bg-primary ms-1" *ngFor="let subCategory of item.category_tags">{{subCategory}}</li>
             </ul>
             
         </div>
