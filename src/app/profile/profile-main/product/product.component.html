@@ -7,7 +7,7 @@
         <div>
             <button class="btn border me-2">Discard</button>
             <button class="btn border me-2">Safe draft</button>
-            <button class="btn btn-primary">Publish product</button>
+            <button class="custom-btn">Publish product</button>
         </div>
     </div>
 
@@ -68,15 +68,32 @@
                     </div> -->
 
                     <div class="stock">
-                        <div class="stock-item">
+                           <div class="stock-item">
                             <div class="form-group">
                                 <label for="" class="heading-txt form-group-text mb-1">Regular price</label>
                                 <input type="text" class="form-control" placeholder="$$">
                             </div>
+                            <button class=" custom-btn">Add stock</button>
                             </div>
-                            <div class="stock-btn">
-                                <label for="" class="heading-txt form-group-text mb-1 invisible">Regular price</label>
-                                <button class=" custom-btn">Add stock</button>
+                            <div class="stock-content">
+                                <table>
+                                    <tr>
+                                        <td>Product in stock now:</td>
+                                        <td>$1,090</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Product in transit:</td>
+                                        <td>5000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Last time restocked:</td>
+                                        <td>30th June, 2021</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total stock over lifetime:</td>
+                                        <td>20,000</td>
+                                    </tr>
+                                </table>
                             </div>
                     </div>
 
@@ -86,6 +103,51 @@
                 
             </div>
             <div class="col-md-4">
+                <h5 class="heading-txt">Organize products</h5>
+           <div class="organize">
+           <div class="input-group d-flex flex-column mb-4">
+            <h6>Add a product in a category</h6>
+            <p class="form-text p-0 m-0">
+                Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters
+            </p>
+            <label class="form-label" for="">Choose category</label>
+            <select type="text" class="form-control w-100" name="" id="">
+                <option value="">onw</option>
+                <option value="">onw</option>
+                <option value="">onw</option>
+            </select>
+        </div>
+
+        <div class="input-group d-flex flex-column mb-4">
+            <h6>Add a product in a tag</h6>
+            <p class="form-text p-0 m-0">
+                Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters
+            </p>
+            <label class="form-label" for="">Choose tags</label>
+            <select type="text" class="form-control w-100" name="" id="">
+                <option value="">onw</option>
+                <option value="">onw</option>
+                <option value="">onw</option>
+            </select>
+        </div>
+           </div>
+
+           <div class="variant">
+            <div class="input-group d-flex flex-column mb-4">
+                <h6 class="border w-100">Add product variant like color,size,weight ect</h6>
+                <p class="form-text p-0 m-0">
+                 contain letters and numbers, and must not contain spaces, special characters
+                </p>
+                <label class="form-label" for="">Choose variant</label>
+                <select type="text" class="form-control w-100" name="" id="">
+                    <option value="">Color</option>
+                    <option value="">Size</option>
+                    <option value="">Weight</option>
+                </select>
+                <textarea name="" id="" class="variant-textarea form-control w-100" cols="30" rows="5"></textarea>
+            </div>
+           </div>
+
 
             </div>
         </div>
