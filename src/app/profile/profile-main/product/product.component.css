@@ -5,12 +5,13 @@ height:90vh;
 border: 1px solid red;
 overflow-y: scroll;
 background-color: var(--color-bg-two);
+float: left;
 }
 .main-container .title{
     width: 100%;
     height: 100px;
     float: left;
-    border:1px solid red;
+    border:1px solid rgb(104, 43, 43);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,7 +20,7 @@ background-color: var(--color-bg-two);
     width: 100%;
     height: auto;
     float: left;
-    border:1px solid red;
+    border:1px solid rgb(0, 8, 255);
     padding: 3vw 0vw;
 }
 
@@ -41,6 +42,7 @@ background-color: var(--color-bg-two);
   position: relative;
   text-align: center;
   margin:25px auto;
+  float: left;
 }
 
 .image-input-cont input{
@@ -52,9 +54,76 @@ background-color: var(--color-bg-two);
 }
 .inventory{
     width: 100%;
-    height: 100px;
-    border:1px solid red;
+    height:auto;
+    border:1px solid rgb(33, 31, 31);
     margin:25px auto;
+    float: left;
+}
+.inventory .inventory-content {
+    width: 100%;
+    height:auto;
+    border:1px solid red;
+    float: left;
+    display: flex;
+    justify-content: space-between;
+}
+.inventory .inventory-tabs{
+    width: 40%;
+    height:auto;
+}
+.inventory .inventory-tab-content{
+  width: 60%;
+  height:auto;
+}
+.inventory .inventory-tabs ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.inventory .inventory-tabs ul li{
+    padding: 10px 12px;
+    border:1px solid red;
+}
+.inventory .inventory-tabs ul li a{
+ text-decoration: none;
+ text-transform: capitalize;
+ color: var(--color-p);
+}
+.inventory .inventory-tabs ul li i{
+   color:var(--color-p)
+   }
+.inventory .inventory-tabs ul li div{
+   
+    border:1px solid red;
+}
+.inventory .inventory-tab-content .price{
+    width: 100%;
+    height:100%;
+    display: flex;
+    justify-content: space-between;
+    padding:8px 10px;
+} 
+.inventory .inventory-tab-content .price .regular-price {
+width: 48%;
+height: auto;
+}
+.inventory .inventory-tab-content .price .sale-price{
+    width: 48%;
+    height: auto;
+}
+.stock{
+    width: 100%;
+    height: 100%;
+    background-color: blueviolet;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+}
+.inventory .inventory-tab-content .stock .stock-item{
+    border:1px solid black;
+}
 
-
+.inventory .inventory-tab-content .stock .stock-btn{
+ border:1px solid green;
+ padding-left:5px;
 }
