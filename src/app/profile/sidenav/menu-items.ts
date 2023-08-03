@@ -21,8 +21,8 @@ export const ROUTES: RouteInfo[] = [
   },
 
   {
-    path: '/dashboard',
-    title: 'Sales',
+    path: 'product',
+    title: 'Product',
     icon: 'fa-solid fa-person-pregnant',
     class: '',
     extralink: false,

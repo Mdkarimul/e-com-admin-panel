@@ -6,11 +6,15 @@ import { MainHomeComponent } from './main-home.component';
 import { HeaderComponent } from '../header/header.component';
 import { FormsModule } from '@angular/forms';
 import { HeroSliderComponent } from '../hero-slider/hero-slider.component';
+import { OfferSectionComponent } from '../offer-section/offer-section.component';
+import { FooterSectionComponent } from '../footer-section/footer-section.component';
 @NgModule({
   declarations: [
     MainHomeComponent,
     HeaderComponent,
-    HeroSliderComponent
+    HeroSliderComponent,
+    OfferSectionComponent,
+    FooterSectionComponent
   ],
   imports: [
     CommonModule,

@@ -85,7 +85,6 @@ export class CreateCategoryComponent implements AfterViewInit {
   }
 
   deleteCategory(index:number){
-    this.modal_btn_Control = "Delete";
     const currentData = this.all_category[index];
     this.Cid =  currentData._id;
     console.log(this.Cid);
@@ -116,9 +115,11 @@ export class CreateCategoryComponent implements AfterViewInit {
       if(this.modal_btn_Control==="Submit"){
         console.log(this.createCategoryData);
        this.httpResponse =  this.categoryService.createCategory(this.createCategoryData);
+      this.modal_btn_Control = "Submit";
       }else if(this.modal_btn_Control==="Update"){
         this.createCategoryData.category_id=this.Cid;
         this.httpResponse =  this.categoryService.updateCategory(this.createCategoryData);
+        this.modal_btn_Control = "Submit";
       }
       this.httpResponse.subscribe((data:any)=>{
         this.showMessage.showMessage(data);

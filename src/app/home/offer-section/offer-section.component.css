@@ -1,0 +1,90 @@
+.main-container{
+    width: 100%;
+    height:auto;
+    border:1px solid red;
+    float: left;
+}
+.main-container .trending-product{
+float: left;
+width: 100%;
+height:auto;
+float: left;
+padding:25px 10px;
+}
+.main-container .trending-product h5{
+    text-transform: capitalize;
+    padding: 0px;
+    margin: 0px;
+}
+.main-container .trending-product .deals{
+    width: 100%;
+    height:auto;
+    float: left;
+    border:1px solid red;
+    margin: 25px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.main-container .trending-product .deals .deal{
+    width: 230px;
+    height:270px;
+    background-color: #ddd;
+    float: left;
+    margin-left:20px;
+}
+.main-container .trending-product .deals .deal:first-child{
+    width: 330px;
+    height:270px;
+    background-color: #ddd;
+    float: left;
+    margin-left:20px;
+}
+
+
+/*start top brand coding */
+.main-container .top-product{
+    width: 100%;
+    height:auto;
+    float:left;
+    border:1px solid rgb(52, 151, 173);
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ddd;
+    padding: 20px 0px;
+}
+.main-container .group-product{
+    width:24%;
+    height:400px;
+    float: left;
+    border:2px solid red;
+}
+ .main-container .electronics-product{
+    width: 100%;
+    float: left;
+    height: 240px;
+    background-color: #ddd;
+    margin-bottom:30px;
+    padding: 10px;
+ }
+
+ .main-container .home-product{
+    width: 100%;
+    float: left;
+    height: 240px;
+    background-color: #ddd;
+    margin-bottom:30px;
+    padding: 10px;
+ }
+
+ .main-container .fashion-product{
+    width: 100%;
+    float: left;
+    height: 240px;
+    background-color: #ddd;
+    margin-bottom:30px;
+    padding: 10px;
+ }
+
+
+/*end top brand coding here*/

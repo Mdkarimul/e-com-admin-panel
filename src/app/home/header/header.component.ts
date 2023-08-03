@@ -1,4 +1,4 @@
-import { Component,ElementRef,ViewChild, OnInit, } from '@angular/core';
+import { Component,ElementRef,ViewChild, OnInit, Output, EventEmitter, } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,14 +7,20 @@ import { Component,ElementRef,ViewChild, OnInit, } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-
-  
+@Output() sideNav = new EventEmitter<boolean>(); 
+public controlNav:boolean = false;
 constructor (private elementRef:ElementRef){
 
 }
 ngOnInit(): void {
   const native = this.elementRef.nativeElement;
   console.log(native);
+}
+
+controlSidenav():void {
+
+  this.sideNav.emit(true);
+
 }
 
 

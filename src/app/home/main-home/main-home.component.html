@@ -1,2 +1,29 @@
-<app-header></app-header>
+<app-header (sideNav)="controlSidenav($event)"></app-header>
 <app-hero-slider></app-hero-slider>
+<app-offer-section></app-offer-section>
+<app-footer-section></app-footer-section>
+
+<div class="side-nav" [style.width.px]="sideControl ? '300' : '0'">
+
+
+    <div class="header">
+     <div class="header-content">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        <span>hellow signin</span>
+        <i class="fa fa-bars" (click)="controlSidenav(false)" aria-hidden="true"></i>
+     </div>
+    </div>
+    <div class="body">
+    <ul>
+        <li *ngFor="let category of allCategory">
+        <a href="">{{category.category_name}}</a>
+        </li>     
+      </ul>
+    </div>
+    <footer class="footer">
+
+    </footer>
+
+</div>
+
+<div class="cover-screen" *ngIf="sideControl"></div>
