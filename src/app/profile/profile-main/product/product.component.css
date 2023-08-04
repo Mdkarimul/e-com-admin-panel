@@ -157,3 +157,9 @@ height: auto;
 .variant-textarea:focus{
     outline: none;
 }
+
+.shipping-type{
+    width: 100%;
+    height: 100%;
+    background-color: royalblue;
+}
