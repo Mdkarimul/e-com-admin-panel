@@ -112,6 +112,7 @@ height: auto;
     justify-content:space-between;
     padding: 8px 10px;
     flex-direction: column;
+
 }
 .inventory .inventory-tab-content .stock .stock-item{
     display: flex;
@@ -161,5 +162,39 @@ height: auto;
 .shipping-type{
     width: 100%;
     height: 100%;
-    background-color: royalblue;
+    border:1px solid red;
+    padding: 10px;
 }
+
+.delivery-type{
+    width: 100%;
+    height: 100%;
+    border:1px solid red;
+    padding: 10px;
+}
+
+.attrubutes-type{
+    width: 100%;
+    height: 100%;
+    border:1px solid red;
+    padding: 10px;
+}
+
+.advanced{
+    width: 100%;
+    height: 100%;
+    border:1px solid red;
+    padding: 10px;
+}
+
+.add-featured{
+    width: 100%;
+    height: 100%;
+    border:1px solid red;
+    padding: 10px; 
+}
+.add-featured textarea{
+    resize: none;
+}
+
+
