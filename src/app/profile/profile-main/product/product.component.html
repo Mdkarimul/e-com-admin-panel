@@ -3,12 +3,12 @@
     <!--START PRODUCT TITLE-->
     <div class="title">
         <div>
-            <h3 class="heading-txt">Add Product</h3>
+            <h4 class="heading-txt p-0 m-0">Add Product</h4>
             <p class="paragraph-txt">Ordered placed across store</p>
         </div>
         <div>
-            <button class="btn border me-2">Discard</button>
-            <button class="btn border me-2">Safe draft</button>
+            <!-- <button class="btn border me-2">Discard</button>
+            <button class="btn border me-2">Safe draft</button> -->
             <button class="custom-btn">Publish product</button>
         </div>
     </div>
@@ -17,34 +17,32 @@
 
     <!--START PRODUCT DETAILS-->
     <div class="content">
-        <div class="row p-0 m-0 border">
+        <div class="row p-0 m-0 p-2">
             <div class="col-md-8">
                 <div class="product-title">
-                    <h6 class="heading-txt">Product Title*</h6>
                     <div class="form-group">
-                        <input type="text" class="form-control">
+                        <label for="" class="form-label paragraph-txt">Product title*</label>
+                        <input type="text" class="form-control" placeholder="Product title">
                     </div>
                 </div>
              
                <div class="product-desc">
-                <h6 class="heading-txt">Product Description*</h6>
                 <div class="form-group">
-                    <textarea rows="5" type="text" class="form-control input-desc"></textarea>
+                    <label for="" class="form-label paragraph-txt">Product description*</label>
+                    <textarea rows="5" type="text" class="form-control input-desc" placeholder="Product description"></textarea>
                 </div>
                </div>
 
                <div class="display-images">
-                <h6 class="heading-txt">Display images*</h6>
-                <div class="form-group">
                    <div class="image-input-cont">
                     <span class="paragraph-txt">Upload images</span>
                     <input type="file" name="" id="">
-                   </div>
+                   
                 </div>
                </div>
 
                <div class="inventory">
-                <h6 class="heading-txt">Inventory*</h6>
+                <label class=" form-label paragraph-txt">Inventory details</label>
                 <div class="inventory-content">
                  <div class="inventory-tabs">
                     <ul>
@@ -59,31 +57,36 @@
                  </div>
 
                  <!--START INVENTORY CODING-->
-                 <div class="inventory-tab-content" style="border:1px solid red;">
+                 <div class="inventory-tab-content">
                     <ng-template [ngIf]="selectedTabs=='tab1'">
                         <div class="price">
-                            <div class="regular-price">
-                                <div class="form-group">
-                                    <label for="" class="heading-txt form-group-text mb-1">Regular price</label>
-                                    <input type="text" class="form-control" placeholder="$$">
-                                </div>
-                                </div>
-                                <div class="sale-price">
+                            <h5 class="paragraph-txt mb-3">Product price</h5>
+                            <div class="row">
+                                <div class="col">
                                     <div class="form-group">
-                                        <label for="" class=" heading-txt form-group-text mb-1">Sale price</label>
-                                        <input type="text" class="form-control" placeholder="$$">
+                                        <label for="" class="paragraph-txt form-label mb-1">Regular price*</label>
+                                        <input type="text" class="form-control" placeholder="price">
                                     </div>
                                 </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="" class=" paragraph-txt form-label mb-1">Sale price*</label>
+                                        <input type="text" class="form-control" placeholder="price">
+                                    </div>
+                                </div>
+                            </div>
+                           
                         </div>
                     </ng-template>
                    
 
                     <ng-template [ngIf]="selectedTabs=='tab2'">
                         <div class="stock">
+                            <h5 class="paragraph-txt mb-1">Global region</h5>
                             <div class="stock-item">
                              <div class="form-group">
-                                 <label for="" class="heading-txt form-group-text mb-1">Regular price</label>
-                                 <input type="text" class="form-control" placeholder="$$">
+                                 <label for="" class="paragraph-txt form-label mb-1">Total stock</label>
+                                 <input type="text" class="form-control" placeholder="Number of item">
                              </div>
                              <button class=" custom-btn">Add stock</button>
                              </div>
@@ -113,44 +116,44 @@
 
                     <ng-template [ngIf]="selectedTabs=='tab3'">
                         <div class="shipping-type">
-                            <h5 class="heading-txt mb-3">Shipping type</h5>
+                            <h5 class="paragraph-txt mb-3">Delivered by</h5>
                             <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <h6 class="form-check-label heading-txt" for="inlineRadio2">Fullfilled by Seller</h6>
-                                <p class="form-text p-0 m-0">
-                                    contain letters and numbers, and must not contain spaces, special characters
+                                <label class="form-check-label paragraph-txt" for="inlineRadio2">Fullfilled by seller</label>
+                                <p class="form-text paragraph-txt  p-0 m-0 pt-1">
+                                    Contain letters and numbers, and must not contain special characters
                                    </p>
                               </div>
     
                               <div class="form-check mb-4">
-                                <input class="form-check-input" checked="checked" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <h6 class="form-check-label heading-txt" for="inlineRadio2">Fullfilled by Phoenix <span class="badge bg-warning text-dark">Recommended way</span></h6>
-                                <p class="form-text p-0 m-0">
-                                    contain letters and numbers, and must not contain spaces, special characters
+                                <input class="form-check-input"  checked="checked" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                <label class="form-check-label paragraph-txt" for="inlineRadio2">Fullfilled by Phoenix <span class="badge bg-warning text-dark paragraph-txt">Recommended way</span></label>
+                                <p class="paragraph-txt form-text p-0 m-0 pt-1">
+                                    Contain letters not contain spaces, special characters
                                    </p>
                               </div>
     
-                              <span class="form-text ps-4">See our Delivery<a href="#" class="link-primary">Primary link</a> terms and conditions</span>
+                              <span class="form-text paragraph-txt ps-4">See our Delivery<a href="#" class="link-primary">Primary link</a> terms and conditions</span>
                         </div> 
                     </ng-template>
                   
                      
                     <ng-template [ngIf]="selectedTabs=='tab4'">
                         <div class="delivery-type">
-                            <h5 class="heading-txt mb-3">Global Delivery</h5>
+                            <h5 class="paragraph-txt mb-3">Delivary region</h5>
                             <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <h6 class="form-check-label heading-txt" for="inlineRadio2">Worldwide delivery</h6>
-                                <p class="form-text p-0 m-0">
+                                <label class="form-check-label paragraph-txt" for="inlineRadio2">Worldwide delivery</label>
+                                <p class="form-text paragraph-txt p-0 m-0">
                                     Only available with Shipping method: Fullfilled by Phoenix
                                    </p>
                               </div>
     
                               <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <h6 class="form-check-label heading-txt" for="inlineRadio2">Worldwide delivery</h6>
+                                <label class="form-check-label paragraph-txt " for="inlineRadio2">Global country</label>
                                 <p class="form-text p-0 m-0">
-                                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                    <select class="form-select form-select-sm my-2 paragraph-txt" aria-label=".form-select-sm example">
                                         <option selected>Open this select menu</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
@@ -161,33 +164,33 @@
     
                               <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <h6 class="form-check-label heading-txt" for="inlineRadio2">Local delivery</h6>
-                                <p class="form-text p-0 m-0">
+                                <label class="form-check-label paragraph-txt" for="inlineRadio2">Local delivery</label>
+                                <p class="form-text p-0 m-0 paragraph-txt">
                                     Deliver to your country of residence Change profile address
                                    </p>
                               </div>
     
-                              <span class="form-text ps-4">See our Delivery<a href="#" class="link-primary">Primary link</a> terms and conditions</span>
+                              <span class="form-text ps-4 paragraph-txt">See our Delivery<a href="#" class="link-primary">Primary link</a> terms and conditions</span>
                         </div> 
                     </ng-template>
                   
 
                      <ng-template [ngIf]="selectedTabs=='tab5'">
                         <div class="attrubutes-type">
-                            <h5 class="heading-txt mb-3">Attributes</h5>
+                            <h5 class="paragraph-txt mb-3">Attributes</h5>
                             <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <label class="form-check-label heading-txt" for="inlineRadio2">Fragile Product</label>
+                                <label class="form-check-label paragraph-txt" for="inlineRadio2">Fragile Product</label>
                               </div>
     
                               <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <label class="form-check-label heading-txt" for="inlineRadio2">Biodegradable</label>
+                                <label class="form-check-label paragraph-txt" for="inlineRadio2">Biodegradable</label>
                               </div>
     
                               <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <label class="form-check-label heading-txt" for="inlineRadio2">Frozen Product</label>
+                                <label class="form-check-label paragraph-txt" for="inlineRadio2">Frozen Product</label>
                                 <div class="form-group p-0 m-0 my-2">
                                     <input class="form-control" type="text" aria-label="readonly input example" placeholder="Max allowed temperature">
                                 </div>
@@ -195,24 +198,24 @@
     
                               <div class="form-check mb-4">
                                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <label class="form-check-label heading-txt" for="inlineRadio2">Expiry Date of Product</label>
+                                <label class="form-check-label paragraph-txt" for="inlineRadio2">Expiry Date of Product</label>
                                 <div class="form-group p-0 m-0 my-2">
-                                    <input class="form-control" type="date" aria-label="readonly input example" placeholder="Max allowed temperature">
+                                    <input class="form-control paragraph-txt" type="date" aria-label="readonly input example" placeholder="Max allowed temperature">
                                 </div>
                               </div>
     
-                              <span class="form-text ps-4">See our Delivery<a href="#" class="link-primary">Primary link</a> terms and conditions</span>
+                              <span class="form-text ps-4 paragraph-txt">See our Delivery<a href="#" class="link-primary">Primary link</a> terms and conditions</span>
                         </div> 
                      </ng-template>
                      
                      <ng-template [ngIf]="selectedTabs=='tab6'">
                         <div class="advanced">
-                            <h5 class="heading-txt mb-3">Advanced</h5>
+                            <h5 class="paragraph-txt mb-3">Advanced</h5>
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <h6>Product ID Type</h6>
-                                        <select class="form-select" aria-label="Default select example">
+                                        <label class="form-label  paragraph-txt">Product ID Type</label>
+                                        <select class="form-select paragraph-txt" aria-label="Default select example">
                                             <option selected>JAN</option>
                                             <option value="1">One</option>
                                             <option value="2">Two</option>
@@ -223,7 +226,7 @@
                                   </div>
                                   <div class="col">
                                     <div class="form-group">
-                                        <h6>Product ID</h6>
+                                        <label class="form-label  paragraph-txt">Product ID</label>
                                         <input type="text" placeholder="ISBN" class="form-control" aria-label="Last name">
                                     </div>
                                   
@@ -234,23 +237,28 @@
                   
                       <ng-template [ngIf]="selectedTabs=='tab7'">
                         <div class="add-featured">
-                            <h5 class="heading-txt mb-3">Add featured</h5>
-                            <div class="row">
+                            <h5 class="paragraph-txt mb-3">Add featured</h5>
+                            <div class="row mb-2">
                                 <div class="col">
                                     <div class="form-group">
-                                        <h6>Featured name</h6>
+                                        <label class="form-label  paragraph-txt">Featured name</label>
                                        <input type="text" class="form-control">
                                     </div>
                                   </div>
                             </div>
     
-                            <div class="row">
+                            <div class="row mb-2">
                                 <div class="col">
                                     <div class="form-group">
-                                        <h6>Featured description</h6>
+                                        <label class="form-label  paragraph-txt">Featured description</label>
                                         <textarea type="text" placeholder="ISBN" class="form-control" aria-label="Last name"></textarea>
                                     </div>
                                   </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <button  type="button" class="custom-btn">Add feature</button>
+                                </div>
                             </div>
                         </div> 
                       </ng-template>
@@ -266,15 +274,15 @@
 
             <!--START ORGANIZE VARIANTS-->
             <div class="col-md-4">
-                <h5 class="heading-txt">Organize products</h5>
+                <h5 class="paragraph-txt p-0 m-0">Organize products</h5>
            <div class="organize">
            <div class="input-group d-flex flex-column mb-4">
-            <h6>Add a product in a category</h6>
-            <p class="form-text p-0 m-0">
+            <label class="form-label paragraph-txt">Add the product in a category</label>
+            <p class="form-text mb-2 p-0 m-0">
                 Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters
             </p>
-            <label class="form-label" for="">Choose category</label>
-            <select type="text" class="form-control w-100" name="" id="">
+            <label class="form-label paragraph-txt" for="">Choose category</label>
+            <select type="text" class="form-select paragraph-txt w-100" name="" id="">
                 <option value="">onw</option>
                 <option value="">onw</option>
                 <option value="">onw</option>
@@ -282,12 +290,12 @@
         </div>
 
         <div class="input-group d-flex flex-column mb-4">
-            <h6>Add a product in a tag</h6>
-            <p class="form-text p-0 m-0">
+            <label class="paragraph-txt mb-2">Add the product in a tag</label>
+            <p class="form-text  mb-2 p-0 m-0">
                 Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters
             </p>
-            <label class="form-label" for="">Choose tags</label>
-            <select type="text" class="form-control w-100" name="" id="">
+            <label class="form-label paragraph-txt" for="">Choose tag</label>
+            <select type="text" class="form-select paragraph-txt w-100" name="" id="">
                 <option value="">onw</option>
                 <option value="">onw</option>
                 <option value="">onw</option>
@@ -296,18 +304,24 @@
            </div>
 
            <div class="variant">
+
             <div class="input-group d-flex flex-column mb-4">
-                <h6 class="border w-100">Add product variant like color,size,weight ect</h6>
-                <p class="form-text p-0 m-0">
-                 contain letters and numbers, and must not contain spaces, special characters
+                <label class="form-label paragraph-txt">Add the product variant</label>
+                <p class="form-text mb-2 p-0 m-0">
+                   
                 </p>
-                <label class="form-label" for="">Choose variant</label>
-                <select type="text" class="form-control w-100" name="" id="">
-                    <option value="">Color</option>
-                    <option value="">Size</option>
-                    <option value="">Weight</option>
+                <label class="form-label paragraph-txt" for="">Product color*</label>
+                <input type="text" class="form-control paragraph-txt w-100" name="" id="">
+                   
+            </div>
+    
+            <div class="input-group d-flex flex-column mb-4">
+                <label class="form-label paragraph-txt" for="">Product size</label>
+                <select type="text" class="form-select paragraph-txt w-100" name="" id="">
+                    <option value="">onw</option>
+                    <option value="">onw</option>
+                    <option value="">onw</option>
                 </select>
-                <textarea name="" id="" class="variant-textarea form-control w-100" cols="30" rows="5"></textarea>
             </div>
            </div>
             </div>

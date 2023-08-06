@@ -9,7 +9,7 @@
     --color-bg:#ffff;
     --color-bg-two:#ebebebe3;
     --color-h:#000000c8;
-    --color-p:#00000088;
+    --color-p:#00000098;
     --color-p-two:#4d4c4c;
     --btn-color:#f5ebe5d3;
     --btn-bg:#3a0ce1;
@@ -19,7 +19,13 @@
 }
 
 
-
+input[type='text']::placeholder,input[type='number']::placeholder,textarea::placeholder{
+    font-family: 'Open Sans', sans-serif;
+    color:var(--color-p);
+}
+input[type='checkbox'] {
+    cursor: pointer;
+}
 
 .heading-txt {
     font-family: 'Roboto', sans-serif;

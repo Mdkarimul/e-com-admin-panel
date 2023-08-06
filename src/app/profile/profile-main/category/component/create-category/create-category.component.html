@@ -64,17 +64,23 @@
               <span class="warn_input" *ngIf="category_name?.errors?.['minlength'] && (category_name?.touched || category_name?.dirty)">Category name should be  5 characters</span>
               <span class="warn_input" *ngIf="category_name?.errors?.['required'] && (category_name?.touched || category_name?.dirty)">Category name is required</span>
             </div>
-            <div class="mb-3">
-              <textarea class="form-control tags" rows="7" formControlName="category_tags" placeholder="Enter tags name and with seperated by comma" id="message-text"></textarea>
+            <div class="mb-3" style="border:1px solid red;">
+              <div class="first-category">
+                <button type="button" class="custom-btn">Add sub category</button>
+              </div>
+        
+              <!-- <textarea class="form-control tags" rows="7" formControlName="category_tags" placeholder="Enter tags name and with seperated by comma" id="message-text"></textarea>
               <ng-template [ngIf]="checkError.checkError('category_tags')">
                 <span class="warn_input" *ngIf="category_tags?.errors?.['required'] && !(category_tags?.touched || category_tags?.dirty)">Category tags is required</span>
               </ng-template>
               <span class="warn_input" *ngIf="category_tags?.errors?.['minlength'] && (category_tags?.touched || category_tags?.dirty)">Tags name should be  5 characters</span>
               <span class="warn_input" *ngIf="category_tags?.errors?.['required'] && (category_tags?.touched || category_tags?.dirty)">Tags name is required</span>
+             -->
             </div>
 
             <div class="mb-3">
-                <input type="submit" [value]="modal_btn_Control" class="custom-btn" >
+                <input type="submit" [value]="modal_btn_Control" class="custom-btn float-auto" >
+              
               </div>
           </form>
           <div class="notification" *ngIf="showMessage.message">

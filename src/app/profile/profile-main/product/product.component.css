@@ -2,16 +2,13 @@
 padding: 2vw 4vw;
 width: 100%;
 height:90vh;
-border: 1px solid red;
 overflow-y: scroll;
-background-color: var(--color-bg-two);
 float: left;
 }
 .main-container .title{
     width: 100%;
     height: 100px;
     float: left;
-    border:1px solid rgb(104, 43, 43);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,15 +17,16 @@ float: left;
     width: 100%;
     height: auto;
     float: left;
-    border:1px solid rgb(0, 8, 255);
     padding: 3vw 0vw;
+    background-color: var(--color-bg-two);
+    border-radius: 5px;
 }
 
 .main-container .content .product-title{
-    margin:25px auto;
+    margin-bottom: 20px;
 }
 .main-container .content .product-desc {
-    margin:25px auto;
+    margin-bottom: 20px;
 }
 .input-desc{
     resize: none;
@@ -40,22 +38,27 @@ float: left;
   border:1px dashed var(--color-h);
   border-radius: 5px;
   position: relative;
-  text-align: center;
-  margin:25px auto;
+  margin-bottom:10px;
   float: left;
+}
+.image-input-cont span{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .image-input-cont input{
     width: 100%;
     height: 100%;
-    border:1px solid red;
     cursor: pointer;
     opacity: 0;
 }
+
+/*start inventory coding*/
 .inventory{
     width: 100%;
     height:auto;
-    border:1px solid rgb(33, 31, 31);
     margin:25px auto;
     float: left;
 }
@@ -67,12 +70,15 @@ float: left;
     justify-content: space-between;
 }
 .inventory .inventory-tabs{
-    width: 40%;
+    width: 30%;
     height:auto;
 }
 .inventory .inventory-tab-content{
-  width: 60%;
+  width: 70%;
   height:auto;
+  background-color: var(--color-bg);
+  border-radius: 5px;
+  padding:5px 10px;
 }
 .inventory .inventory-tabs ul{
     list-style: none;
@@ -81,11 +87,16 @@ float: left;
 }
 .inventory .inventory-tabs ul li{
     padding: 10px 12px;
+    cursor: pointer;
+}
+.inventory .inventory-tabs ul li:hover{
+    background-color: var(--color-bg);
 }
 .inventory .inventory-tabs ul li a{
  text-decoration: none;
  text-transform: capitalize;
  color: var(--color-p);
+ font-family: var(--para-font);
 }
 .inventory .inventory-tabs ul li i{
    color:var(--color-p)
@@ -93,18 +104,9 @@ float: left;
 .inventory .inventory-tab-content .price{
     width: 100%;
     height:100%;
-    display: flex;
-    justify-content: space-between;
     padding:8px 10px;
 } 
-.inventory .inventory-tab-content .price .regular-price {
-width: 48%;
-height: auto;
-}
-.inventory .inventory-tab-content .price .sale-price{
-    width: 48%;
-    height: auto;
-}
+
 .stock{
     width: 100%;
     height: 100%;
@@ -128,15 +130,61 @@ height: auto;
  padding-left:5px;
 }
 .inventory .inventory-tab-content .stock .stock-content table{
-    width:90%;
+    width:100%;
     text-align: left;
 }
+.inventory .inventory-tab-content .stock .stock-content table tr{
+margin: 2px 0px;
+
+}
+
+.inventory .inventory-tab-content .stock .stock-content table tr td{
+    padding: 8px 12px;
+    font-family: 'Open Sans', sans-serif;
+    color:var(--color-p-two);
+    }
+.shipping-type{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+.shipping-type span{
+ background-color: none;   
+}
+
+.delivery-type{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.attrubutes-type{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.advanced{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.add-featured{
+    width: 100%;
+    height: 100%;
+    padding: 10px; 
+}
+.add-featured textarea{
+    resize: none;
+}
+/*end inventory coding*/
 
 .organize{
     width: 100%;
-    height: 400px;
+    height:auto;
     background-color: var(--color-bg);
-    margin:25px auto;
+    margin:20px auto;
     border-radius: 5px;
     padding: 15px 10px;
 }
@@ -144,7 +192,6 @@ height: auto;
 .variant{
     width: 100%;
     height: auto;
-    border:1px solid red;
     background-color: var(--color-bg);
     border-radius: 5px!important;
     padding: 15px 10px;
@@ -157,44 +204,6 @@ height: auto;
 }
 .variant-textarea:focus{
     outline: none;
-}
-
-.shipping-type{
-    width: 100%;
-    height: 100%;
-    border:1px solid red;
-    padding: 10px;
-}
-
-.delivery-type{
-    width: 100%;
-    height: 100%;
-    border:1px solid red;
-    padding: 10px;
-}
-
-.attrubutes-type{
-    width: 100%;
-    height: 100%;
-    border:1px solid red;
-    padding: 10px;
-}
-
-.advanced{
-    width: 100%;
-    height: 100%;
-    border:1px solid red;
-    padding: 10px;
-}
-
-.add-featured{
-    width: 100%;
-    height: 100%;
-    border:1px solid red;
-    padding: 10px; 
-}
-.add-featured textarea{
-    resize: none;
 }
 
 
