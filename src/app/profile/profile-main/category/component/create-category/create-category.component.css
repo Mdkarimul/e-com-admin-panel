@@ -131,7 +131,7 @@
    margin:1rem auto 1rem auto;
    text-transform: capitalize;
   }
-  .category-name,.tags{
+  .category-name,.tags,.first-category input{
     font-family: var(--para-font);
     text-transform: capitalize;
   }
@@ -147,10 +147,24 @@
   }
 
   .first-category{
-    width: 100%;
+    width:97%;
+    height:400px;
+    margin-left:3%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .second-category{
+    width:94%;
     height:auto;
-    background-color: red;
-    padding-left:3%;
+    margin-left:6%;
+  }
+  .third-category{
+    width:90%;
+    height: auto;
+    margin-left: 10%;
+  }
+  .submit-btn-cont{
+    background-color: #ccc;
   }
   
   

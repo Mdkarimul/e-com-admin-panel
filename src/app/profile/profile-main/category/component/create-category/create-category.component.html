@@ -48,7 +48,7 @@
 
   <!--bootstrap modal coding-->
   <div data-bs-backdrop="false" #modal class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog  modal-dialog-centered">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" (click)="form.resetForm();checkError.validate_array=[]" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -56,19 +56,34 @@
         <div class="modal-body">
           <form #form="ngForm" (submit)="createCategory($event);form.resetForm()" [formGroup]="createCategoryForm">
             <h5 class="modal-title" id="exampleModalLabel">Add category</h5>
-            <div class="mb-3">
+            <div class="mb-2">
               <input type="text" class="form-control category-name" formControlName="category_name" placeholder="Enter category name" id="recipient-name">
+              <button type="button" (click)="createDynamicElement()" title="Create 1st sub category" class="custom-btn my-2 me-2"><i style="font-size:22px;" class="fa fa-plus-circle" aria-hidden="true"></i></button>
               <ng-template [ngIf]="checkError.checkError('category_name')">
                 <span class="warn_input" *ngIf="category_name?.errors?.['required'] && !(category_name?.touched || category_name?.dirty)">Category name is required</span>
               </ng-template>
               <span class="warn_input" *ngIf="category_name?.errors?.['minlength'] && (category_name?.touched || category_name?.dirty)">Category name should be  5 characters</span>
               <span class="warn_input" *ngIf="category_name?.errors?.['required'] && (category_name?.touched || category_name?.dirty)">Category name is required</span>
             </div>
-            <div class="mb-3" style="border:1px solid red;">
-              <div class="first-category">
-                <button type="button" class="custom-btn">Add sub category</button>
+            <div class="mb-4 sub-category">
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Accordion Item #1
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <div class="first-category" #addElement>
+                
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-        
+           
+              
               <!-- <textarea class="form-control tags" rows="7" formControlName="category_tags" placeholder="Enter tags name and with seperated by comma" id="message-text"></textarea>
               <ng-template [ngIf]="checkError.checkError('category_tags')">
                 <span class="warn_input" *ngIf="category_tags?.errors?.['required'] && !(category_tags?.touched || category_tags?.dirty)">Category tags is required</span>
@@ -78,14 +93,16 @@
              -->
             </div>
 
-            <div class="mb-3">
-                <input type="submit" [value]="modal_btn_Control" class="custom-btn float-auto" >
-              
-              </div>
+        
+               
+           
           </form>
           <div class="notification" *ngIf="showMessage.message">
             <span [style.color]="showMessage.type == 'success' ? '#28A745' : '#FFC107'">{{showMessage.message}}</span>
           </div>
+        </div>
+        <div class="modal-footer">
+          <input type="submit" [value]="modal_btn_Control" class="custom-btn float-auto" >
         </div>
       </div>
     </div>
