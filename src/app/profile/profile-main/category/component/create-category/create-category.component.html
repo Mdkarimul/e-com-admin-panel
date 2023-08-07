@@ -57,8 +57,8 @@
           <form #form="ngForm" (submit)="createCategory($event);form.resetForm()" [formGroup]="createCategoryForm">
             <h5 class="modal-title" id="exampleModalLabel">Add category</h5>
             <div class="mb-2">
-              <input type="text" class="form-control category-name" formControlName="category_name" placeholder="Enter category name" id="recipient-name">
-              <button type="button" (click)="createDynamicElement()" title="Create 1st sub category" class="custom-btn my-2 me-2"><i style="font-size:22px;" class="fa fa-plus-circle" aria-hidden="true"></i></button>
+              <input type="text" class="form-control category-name" #category formControlName="category_name" placeholder="Enter category name" id="recipient-name">
+              <button type="button" (click)="createDynamicElement(category.value)" title="Create 1st sub category" class="custom-btn my-2 me-2"><i style="font-size:22px;" class="fa fa-plus-circle" aria-hidden="true"></i></button>
               <ng-template [ngIf]="checkError.checkError('category_name')">
                 <span class="warn_input" *ngIf="category_name?.errors?.['required'] && !(category_name?.touched || category_name?.dirty)">Category name is required</span>
               </ng-template>
@@ -66,44 +66,46 @@
               <span class="warn_input" *ngIf="category_name?.errors?.['required'] && (category_name?.touched || category_name?.dirty)">Category name is required</span>
             </div>
             <div class="mb-4 sub-category">
-              <div class="accordion" id="accordionExample">
+              <!-- <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      Accordion Item #1
+                      1st sub category
                     </button>
                   </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                      <div class="first-category" #addElement>
-                
-                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
+              <!-- <div class="first-category" #addElement>
+                
+              </div> -->
            
               
-              <!-- <textarea class="form-control tags" rows="7" formControlName="category_tags" placeholder="Enter tags name and with seperated by comma" id="message-text"></textarea>
+              <textarea class="form-control tags" rows="7" formControlName="category_tags" placeholder="Enter tags name and with seperated by comma" id="message-text"></textarea>
               <ng-template [ngIf]="checkError.checkError('category_tags')">
                 <span class="warn_input" *ngIf="category_tags?.errors?.['required'] && !(category_tags?.touched || category_tags?.dirty)">Category tags is required</span>
               </ng-template>
               <span class="warn_input" *ngIf="category_tags?.errors?.['minlength'] && (category_tags?.touched || category_tags?.dirty)">Tags name should be  5 characters</span>
               <span class="warn_input" *ngIf="category_tags?.errors?.['required'] && (category_tags?.touched || category_tags?.dirty)">Tags name is required</span>
-             -->
+            
             </div>
 
-        
-               
+            <div class="modal-footer">
+              <input type="submit" [value]="modal_btn_Control" class="custom-btn float-auto" >
+            </div>
+             </form>  
            
-          </form>
+     
           <div class="notification" *ngIf="showMessage.message">
             <span [style.color]="showMessage.type == 'success' ? '#28A745' : '#FFC107'">{{showMessage.message}}</span>
           </div>
         </div>
-        <div class="modal-footer">
-          <input type="submit" [value]="modal_btn_Control" class="custom-btn float-auto" >
-        </div>
+        
+        
+      
       </div>
     </div>
   </div>
