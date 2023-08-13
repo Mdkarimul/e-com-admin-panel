@@ -1,4 +1,4 @@
-import { Component,AfterViewInit, ViewChild, ElementRef,Renderer2, ContentChildren, QueryList, ViewChildren } from '@angular/core';
+import { Component,AfterViewInit,OnInit, ViewChild, ElementRef,Renderer2, ContentChildren, QueryList, ViewChildren } from '@angular/core';
 import { FormBuilder ,FormGroup, FormControl, Validators  } from '@angular/forms';
 import { CategoryService } from '../../../../../services/category.service';
 import { ValidatorsService } from 'src/app/services/validators.service';
@@ -11,7 +11,8 @@ import { Observable } from 'rxjs';
   templateUrl: './create-category.component.html',
   styleUrls: ['./create-category.component.css']
 })
-export class CreateCategoryComponent implements AfterViewInit {
+export class CreateCategoryComponent implements AfterViewInit,OnInit {
+
   constructor(
     public fb:FormBuilder,
     private categoryService:CategoryService,
@@ -30,149 +31,22 @@ export class CreateCategoryComponent implements AfterViewInit {
   public modal_btn_Control:string="Submit";
   public httpResponse!:Observable<any>
   public Cid!:number;
+ public createCategoryForm!:FormGroup;
 
 @ViewChild('addElement',{read:ElementRef}) addElement!:ElementRef;
 @ViewChildren('addElement') contentChildren !: QueryList<ElementRef>
 
-createDynamicElement(category_name:string){
-  //first sub category
-  // <input type="text" class="form-control category-name" formControlName="category_name" placeholder="Enter category name" id="recipient-name">
-if(category_name===""){
 
+
+ngOnInit(): void {
+  this.createCategoryForm = this.fb.group({
+    category_name:['',[Validators.minLength(5),Validators.required]],
+    main_category:['',[Validators.minLength(5),Validators.required]]
+   });
 }
 
-console.log(this.contentChildren);
-
-  const div_first = this.render.createElement("div");
-  const first_button = this.render.createElement("button");
-  const first_i = this.render.createElement("i");
-  const first_input = this.render.createElement("input");
-  this.render.setAttribute(div_first,"formGroupName","1st-sub-category");
-  this.render.addClass(first_input,"first-category-input");
-  this.render.setAttribute(first_input,"type","text");
-  this.render.setAttribute(first_input,"formControlName","onest_category_input");
-  this.render.addClass(first_i,'fa');
-  this.render.addClass(first_i,'fa-plus-circle');
-  this.render.addClass(div_first,'my-2');
-  this.render.setAttribute(div_first,'style','border-left:2px solid #ddd');
-  this.render.setAttribute(first_i,'style','font-size:22px');
-  this.render.setAttribute(first_button,'type','button');
-  this.render.addClass(first_button,'my-2');
-  this.render.appendChild(first_button,first_i);
-  this.render.addClass(first_button,'custom-btn');
-  this.render.setAttribute(first_input,'placeholder','Enter 1st sub category');
-  this.render.addClass(first_input,'form-control');
-  this.render.appendChild(div_first,first_input);
-  this.render.appendChild(div_first,first_button);
-  this.render.appendChild(this.addElement.nativeElement,div_first);
-
- this.render.listen(first_button,'click',()=>{
 
 
- //second sub category
-  const div_second = this.render.createElement("div");
-  const second_button = this.render.createElement("button");
-  const second_i = this.render.createElement("i");
-  const second_input = this.render.createElement("input");
-  this.render.setAttribute(div_first,"formGroupName","2st-sub-category");
-  this.render.addClass(div_second,"second-category");
-  this.render.addClass(second_input,"second-category-input");
-  this.render.setAttribute(second_input,"type","text");
-  this.render.setAttribute(second_input,"formControlName","twond_category_input");
-  this.render.addClass(second_i,'fa');
-  this.render.addClass(second_i,'fa-plus-circle');
-  this.render.addClass(div_second,'my-2');
-  this.render.setAttribute(div_second,'style','border-left:2px solid #ddd');
-  this.render.setAttribute(second_i,'style','font-size:22px');
-  this.render.setAttribute(second_button,'type','button');
-  this.render.addClass(second_button,'my-2');
-  this.render.appendChild(second_button,second_i);
-  this.render.addClass(second_button,'custom-btn');
-  this.render.setAttribute(second_input,'placeholder','Enter 2nd sub category');
-  this.render.addClass(second_input,'form-control');
-
-
-  //   //ACCORDION CODING 
-  //   const accor = this.render.createElement("div");
-  //   const accor_item = this.render.createElement("div");
-  //   const accor_h2 = this.render.createElement("h2");
-  //   const accor_button = this.render.createElement("button");
-  //   const accor_body_collapse = this.render.createElement('div');
-  //   const accor_body = this.render.createElement("div");
-  
-  //   this.render.addClass(accor,"accordion");
-  //   this.render.setAttribute(accor,"id","accordionExample"+index);
-  //   this.render.addClass(accor_item,"accordion-item");
-  //   this.render.addClass(accor_h2,"accordion-header");
-  //   this.render.setAttribute(accor_h2,"id","heading"+index);
-  //   this.render.addClass(accor_button,"accordion-button");
-  //   this.render.setAttribute(accor_button,"type","button");
-  //   this.render.setAttribute(accor_button,"data-bs-toggle","collapse")
-  //   this.render.setAttribute(accor_button,"data-bs-target","#collapse"+index);
-  //   const accor_button_one_text = this.render.createText("2nd sub category");
-  //   this.render.appendChild(accor_button,accor_button_one_text);
-  //   this.render.setAttribute(accor_button,"aria-expanded","true");
-  //   this.render.setAttribute(accor_button,"aria-controls","collapse"+index);
-  //   this.render.setAttribute(accor_body_collapse,'id','collapse'+index);
-  //   this.render.addClass(accor_body_collapse,"accordion-collapse");
-  //   this.render.addClass(accor_body_collapse,"collapse");
-  //   this.render.addClass(accor_body_collapse,"show");
-  //   this.render.setAttribute(accor_body_collapse,"aria-labelledby","heading"+index);
-  //   this.render.setAttribute(accor_body_collapse,"data-bs-parent","#accordionExample"+index);
-  //  this.render.addClass(accor_body,"accordion-body");
-  
-  this.render.appendChild(div_second,second_input);
-  this.render.appendChild(div_second,second_button);
-  this.render.appendChild(div_first,div_second);
-
-
-  //  this.render.appendChild(accor_h2,accor_button);
-  //  this.render.appendChild(accor_body_collapse,accor_body);
-  
-  //  this.render.appendChild(accor_item,accor_h2);
-  //  this.render.appendChild(accor_item,accor_body_collapse);
-  //  this.render.appendChild(accor,accor_item);
-  //  this.render.appendChild(div_first,accor);
-
-  
-   //END ACCORDION CODING HERE
-    
-
-
-  this.render.listen(second_button,"click",()=>{
- //third sub category
- const div_third = this.render.createElement("div");
- const third_button = this.render.createElement("button");
- const third_i = this.render.createElement("i");
- const third_input = this.render.createElement("input");
- this.render.setAttribute(div_first,"formGroupName","3rd-sub-category");
- this.render.addClass(div_third,"third-category");
- this.render.addClass(third_input,"third-category-input");
- this.render.setAttribute(third_input,"type","text");
- this.render.setAttribute(third_input,"formControlName","threerd_category_input");
- this.render.addClass(third_i,'fa');
- this.render.addClass(third_i,'fa-plus-circle');
- this.render.addClass(div_third,'my-2');
- this.render.setAttribute(div_third,'style','border-left:2px solid #ddd');
- this.render.setAttribute(third_i,'style','font-size:22px');
- this.render.setAttribute(third_button,'type','button');
- this.render.addClass(third_button,'my-2');
- this.render.appendChild(third_button,third_i);
- this.render.addClass(third_button,'custom-btn');
- this.render.setAttribute(third_input,'placeholder','Enter 3nd sub category');
- this.render.addClass(third_input,'form-control');
-
- this.render.appendChild(div_third,third_input);
- this.render.appendChild(div_third,third_button);
- this.render.appendChild(div_second,div_third);
-
-  })
-
-
-
- });
-
-}
 
 //collapse sub category
   collapseSubcategory(index:number){
@@ -182,8 +56,6 @@ console.log(this.contentChildren);
   //ng afterviewinit hook
   ngAfterViewInit(): void {
    this.getCategory();
-
-
   
   }
 
@@ -206,15 +78,9 @@ console.log(this.contentChildren);
 
   
  
-  createCategoryForm = this.fb.group({
-    // onest_category_input:[''],
-    // twond_category_input:[''],
-    // three_category_input:[''],
-   category_name:['',[Validators.minLength(5),Validators.required]],
-   category_tags:['',[Validators.minLength(5),Validators.required]]
-  });
+
    get category_name() { return this.createCategoryForm.get('category_name'); }
-   get category_tags() { return this.createCategoryForm.get('category_tags'); }
+   get main_category() { return this.createCategoryForm.get('main_category'); }
 
 
 
@@ -233,7 +99,7 @@ console.log(this.contentChildren);
      console.log(all_tags);
     this.createCategoryForm.patchValue({
        category_name : currentData.category_name,
-       category_tags :all_tags
+       main_category :all_tags
     })
   }
 

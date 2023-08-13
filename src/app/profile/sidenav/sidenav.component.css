@@ -29,6 +29,7 @@
     overflow-x:hidden;
     overflow-y:scroll;
     border-top-right-radius: 10px;
+    background-color: #2727ec;
 }
 
 .nav-cont::-webkit-scrollbar{
@@ -83,13 +84,15 @@
 }
 .sidenav-main ul li a{
     text-decoration: none;
-    text-transform: capitalize;
-    color: var(--color-p-two);
-    font-weight:500;
+    text-transform:uppercase;
+    color: var(--color-bg);
     width: 70%;
     text-align: left;
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--heading-font);
     transition: 0.3s;
+    letter-spacing:2px;
+    font-size: 14px;
+
 }
 .sidenav-main ul li a:hover{
     color:var(--color-p);
