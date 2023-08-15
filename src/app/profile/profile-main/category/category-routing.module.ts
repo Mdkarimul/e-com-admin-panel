@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoryComponent } from './category.component';
 import { CreateCategoryComponent } from './component/create-category/create-category.component';
-import { FormsModule } from '@angular/forms';
+
 const routes: Routes = [
   { 
     path: '',

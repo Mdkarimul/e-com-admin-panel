@@ -64,7 +64,7 @@
           <button type="button" (click)="form.resetForm();checkError.validate_array=[]" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body py-4" style="height: 300px;">
-          <form #form="ngForm" (submit)="createCategory($event);form.resetForm()" [formGroup]="createCategoryForm">
+          <form #form="ngForm" (submit)="createCategory($event)" [formGroup]="createCategoryForm">
             <h5 class="modal-title" id="exampleModalLabel">Add category</h5>
             
             <div class="mb-4">

@@ -31,7 +31,7 @@ export class CreateCategoryComponent implements AfterViewInit,OnInit {
   public modal_btn_Control:string="Submit";
   public httpResponse!:Observable<any>
   public Cid!:number;
- public createCategoryForm!:FormGroup;
+
 
 @ViewChild('addElement',{read:ElementRef}) addElement!:ElementRef;
 @ViewChildren('addElement') contentChildren !: QueryList<ElementRef>
@@ -39,11 +39,13 @@ export class CreateCategoryComponent implements AfterViewInit,OnInit {
 
 
 ngOnInit(): void {
-  this.createCategoryForm = this.fb.group({
-    category_name:['',[Validators.minLength(5),Validators.required]],
-    main_category:['',[Validators.minLength(5),Validators.required]]
-   });
+  
 }
+
+createCategoryForm = this.fb.group({
+  category_name:['',[Validators.minLength(5),Validators.required]],
+  main_category:['',[Validators.minLength(5),Validators.required]]
+ });
 
 
 
