@@ -36,7 +36,7 @@
             <div class="sub-category-expander"><span>Sub category</span><i (click)="collapseSubcategory(i);" class="fa fa-plus-square" aria-hidden="true"></i></div>
 
             <ul *ngIf="subCategoryToggler && Cindex==i">
-                <li class="badge bg-primary ms-1" *ngFor="let subCategory of item.category_tags">{{subCategory}}</li>
+                <li class="badge bg-primary ms-1" *ngFor="let subCategory of item">{{item | json}}</li>
             </ul>
             
         </div>
@@ -77,8 +77,9 @@
             </div>
 
             <div class="mb-4">
-              <select name="" class="form-select main-category" formControlName="main_category" id="">
-                <option selected value="Select category">Select category</option>
+              <select name="" class="form-select main-category"  formControlName="main_category" id="">
+                <option  selected value="Select category">Select category</option>
+                <option [value]="subCategory.category_name" *ngFor="let subCategory of all_category">{{subCategory.category_name}}</option>
               </select>
               <ng-template [ngIf]="checkError.checkError('main_category')">
                 <span class="warn_input" *ngIf="main_category?.errors?.['required'] && !(main_category?.touched || main_category?.dirty)">Category tags is required</span>

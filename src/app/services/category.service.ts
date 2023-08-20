@@ -17,17 +17,11 @@ return this.http.post<any>(this.url,data);
 }
 
 getCategory(){
-  return this.http.get<any>(this.url).pipe(
-    map(res=>{
-      for(let i = 0;i<res.notice.length;i++){
-       res.notice[i].category_tags =  res.notice[i].category_tags.split(",");
-      }
-      return res;
-    })
-  );
+  return this.http.get<any>(this.url);
 }
 
 updateCategory(data:any){
+  console.log(data);
   return this.http.put(this.url,data);
 }
 
@@ -35,6 +29,8 @@ deleteCategory(id:number){
   const option = new HttpParams().set("_id",id);
   return this.http.delete(this.url,{params:option});
 }
+
+
 
 
 

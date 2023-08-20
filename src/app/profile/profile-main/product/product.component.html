@@ -1,5 +1,5 @@
 <div class="main-container">
-
+     <form (submit)="addProduct()" [formGroup]="product">
     <!--START PRODUCT TITLE-->
     <div class="title">
         <div>
@@ -9,7 +9,7 @@
         <div>
             <!-- <button class="btn border me-2">Discard</button>
             <button class="btn border me-2">Safe draft</button> -->
-            <button class="custom-btn">Publish product</button>
+            <button type="submit" class="custom-btn">Publish product</button>
         </div>
     </div>
     <!--END PRODUCT TITLE-->
@@ -22,21 +22,21 @@
                 <div class="product-title">
                     <div class="form-group">
                         <label for="" class="form-label paragraph-txt">Product title*</label>
-                        <input type="text" class="form-control" placeholder="Product title">
+                        <input formControlName="product_title" type="text" class="form-control" placeholder="Product title">
                     </div>
                 </div>
              
                <div class="product-desc">
                 <div class="form-group">
                     <label for="" class="form-label paragraph-txt">Product description*</label>
-                    <textarea rows="5" type="text" class="form-control input-desc" placeholder="Product description"></textarea>
+                    <textarea formControlName="product_desc" rows="5" type="text" class="form-control input-desc" placeholder="Product description"></textarea>
                 </div>
                </div>
 
                <div class="display-images">
                    <div class="image-input-cont">
                     <span class="paragraph-txt">Upload images</span>
-                    <input type="file" name="" id="">
+                    <input multiple (change)="getProductImages($event)" type="file" name="" id="">
                    
                 </div>
                </div>
@@ -61,20 +61,21 @@
                     <ng-template [ngIf]="selectedTabs=='tab1'">
                         <div class="price">
                             <h5 class="paragraph-txt mb-3">Product price</h5>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="" class="paragraph-txt form-label mb-1">Regular price*</label>
-                                        <input type="text" class="form-control" placeholder="price">
+                                <div class="row" formGroupName="price">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="" class="paragraph-txt form-label mb-1">Regular price*</label>
+                                            <input formControlName="actual_price" type="text" class="form-control" placeholder="price">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="" class=" paragraph-txt form-label mb-1">Sale price*</label>
+                                            <input formControlName="sell_price" type="text" class="form-control" placeholder="price">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label for="" class=" paragraph-txt form-label mb-1">Sale price*</label>
-                                        <input type="text" class="form-control" placeholder="price">
-                                    </div>
-                                </div>
-                            </div>
+                           
                            
                         </div>
                     </ng-template>
@@ -329,4 +330,5 @@
         </div>
     </div>
     <!--END PRODUCT DETAILS-->
+    </form>
 </div>

@@ -135,6 +135,12 @@
     font-family: var(--para-font);
     text-transform: capitalize;
   }
+ .main-category option {
+  background-color: #fff;
+  color: #333;
+  font-size:16px;
+  padding:40px;
+ }
  
   .warn_input{
     color: var(--color-warn);

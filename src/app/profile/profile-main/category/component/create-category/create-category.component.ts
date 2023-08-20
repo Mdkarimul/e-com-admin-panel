@@ -64,17 +64,16 @@ createCategoryForm = this.fb.group({
   getCategory():void{
     this.categoryService.getCategory().subscribe({
       next : (response)=>{
+        console.log(response.notice);
         this.all_category = response.notice;
-       for(let i=0;i<this.all_category.length;i++){
-       this.all_category[i].category_tags =  this.all_category[i].category_tags[0].split("\n");
-       }
-        console.log(this.all_category);
       },
       error : (error)=>{
         this.showMessage.showMessage(error);
       }
     })
   }
+
+
 
  
 
@@ -92,16 +91,10 @@ createCategoryForm = this.fb.group({
   editCategory(index:number){
     this.modal_btn_Control = "Update";
     const currentData = this.all_category[index];
-    this.Cid =  currentData._id;
-     const tags =currentData.category_tags;
-     let all_tags ="";
-     for(let i=0;i<tags.length;i++){
-    all_tags +=   tags[i]+"\n";
-     }
-     console.log(all_tags);
+    this.Cid = currentData._id;
     this.createCategoryForm.patchValue({
        category_name : currentData.category_name,
-       main_category :all_tags
+       main_category :currentData.main_category
     })
   }
 
@@ -126,33 +119,33 @@ createCategoryForm = this.fb.group({
   createCategory(event:Event){
     event.preventDefault();
    console.log(this.createCategoryForm);
-   alert("cccc");
-    // if(this.createCategoryForm.invalid){
-    //   for (let [key, value] of Object.entries(this.createCategoryForm.controls)) {
-    //     if(value.status==="INVALID"){
-    //      this.checkError.validate_array.push(key);
-    //     }
-    //    }
-    // }else{
-    //   this.createCategoryData = this.createCategoryForm.value;
-    //   if(this.modal_btn_Control==="Submit"){
-    //     console.log(this.createCategoryData);
-    //    this.httpResponse =  this.categoryService.createCategory(this.createCategoryData);
-    //   this.modal_btn_Control = "Submit";
-    //   }else if(this.modal_btn_Control==="Update"){
-    //     this.createCategoryData.category_id=this.Cid;
-    //     this.httpResponse =  this.categoryService.updateCategory(this.createCategoryData);
-    //     this.modal_btn_Control = "Submit";
-    //   }
-    //   this.httpResponse.subscribe((data:any)=>{
-    //     this.showMessage.showMessage(data);
-    //     this.checkError.validate_array = [];
-    //     this.getCategory();
-    //   },
-    //   (error)=>{
-    //     this.showMessage.showMessage(error.error);
-    //     this.checkError.validate_array = [];
-    //   });
-    // }
+   
+    if(this.createCategoryForm.invalid){
+      for (let [key, value] of Object.entries(this.createCategoryForm.controls)) {
+        if(value.status==="INVALID"){
+         this.checkError.validate_array.push(key);
+        }
+       }
+    }else{
+      this.createCategoryData = this.createCategoryForm.value;
+      if(this.modal_btn_Control==="Submit"){
+        console.log(this.createCategoryData);
+       this.httpResponse =  this.categoryService.createCategory(this.createCategoryData);
+      this.modal_btn_Control = "Submit";
+      }else if(this.modal_btn_Control==="Update"){
+        this.createCategoryData.category_id=this.Cid;
+        this.httpResponse =  this.categoryService.updateCategory(this.createCategoryData);
+        this.modal_btn_Control = "Submit";
+      }
+      this.httpResponse.subscribe((data:any)=>{
+        this.showMessage.showMessage(data);
+        this.checkError.validate_array = [];
+        this.getCategory();
+      },
+      (error)=>{
+        this.showMessage.showMessage(error.error);
+        this.checkError.validate_array = [];
+      });
+    }
   }
 }
